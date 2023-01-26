@@ -23,17 +23,30 @@ function EventDetails(props) {
 
   return (
     <div className="EventDetails">
-      {event && (
-        <>
-          <h1>{event.name}</h1>
-          <p>{event.description}</p>
-        </>
-      )}
+      <div>
+        {event && (
+          <>
+            <img src={event.image} alt="festival" />
+            <h2>{event.name}</h2>
+            <h4>Date: {event.date}</h4>
+            <h4>Location: {event.location}</h4>
+            <p>{event.description}</p>
+            <h4>
+            <a target="_blank" href={event.linkToTickets}>Get your tickets</a>
+            </h4>
 
-      {event &&
-        event.tripsOrganized.map((trip) => (
-          <TripCard key={trip._id} {...trip} />
-        ))}
+            <button>I'm Going</button>
+            <h4>{event.attendees} are going to this event</h4>
+          </>
+        )}
+      </div>
+      <div>
+        <h2>Looking for a ride?</h2>{" "}
+        {event &&
+          event.tripsOrganized.map((trip) => (
+            <TripCard key={trip._id} {...trip} />
+          ))}
+      </div>
 
       <Link to="/events">
         <button>Back</button>
