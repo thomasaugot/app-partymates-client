@@ -1,7 +1,7 @@
 function HomePage() {
     return (
       <div>
-        <h1>Home Page</h1>
+        <h1>Welcome to Partymates.es</h1>
       </div>
     );
   }
