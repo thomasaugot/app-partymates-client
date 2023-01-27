@@ -1,0 +1,24 @@
+.SignupPage {
+    font-size: 1em;
+    border: solid 1px white;
+    width: 32vw;
+    margin: 2% 0 20% 34%;
+    border-radius: 5%; 
+}
+
+.SignupPage form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.SignupPage input {
+    width: 20vw;
+    border: none;
+    padding: 5px 10px;
+    margin: 10px 0;
+    border-radius: 63px;
+    background: #c7d2d6;
+    box-shadow: inset 8px 8px 29px #939b9e,
+                inset -8px -8px 29px #fbffff;
+}

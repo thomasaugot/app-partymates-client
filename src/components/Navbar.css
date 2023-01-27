@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@100&display=swap');
+
+.Navbar {
+    padding: 20px 0 40px 0;
+    text-size-adjust: none;
+    position: relative;
+    overflow: hidden;
+    font-family: 'Urbanist', sans-serif;
+    font-size: 0.5em; transform: scale(0.7, 0.9);
+}
+
+.Navbar button {
+    padding: 10px 25px;
+    border: none;
+    background-color: transparent;
+    color: white;
+    font-size: 2vw;
+    text-decoration: underline;
+    text-underline-offset: 8px;
+}
+
+.Navbar button:hover {
+    color: rgb(0,191,255);
+}
+
+.Navbar a {
+    color: transparent;
+}
