@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import "./Signup.css"
 
 function Signup(props) {
   const [email, setEmail] = useState("");
@@ -34,7 +35,7 @@ function Signup(props) {
 
   return (
     <div className="SignupPage">
-      <h1>Sign Up</h1>
+      <h3>Not a member yet? Sign Up!</h3>
 
       <form onSubmit={handleSignupSubmit}>
         <label>Email:</label>
@@ -48,7 +49,7 @@ function Signup(props) {
           onChange={handlePassword}
         />
 
-        <label>Name:</label>
+        <label>Username:</label>
         <input type="text" name="name" value={name} onChange={handleName} />
 
         <button type="submit">Sign Up</button>

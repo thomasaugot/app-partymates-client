@@ -1,8 +1,8 @@
-function TripCard({ description, eventName}) {
+function TripCard({ description, eventName, creator, _id }) {
     return (
         <div className="TaskCard card">
-          <h3>{eventName}</h3>
-          <h4>Description:</h4>
+          <h3>{creator}</h3>
+          <h4>Message:</h4>
           <p>{description}</p>
         </div>
       );
