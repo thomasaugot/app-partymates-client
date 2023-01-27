@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import EventCard from "../components/EventCard";
+import "./AllEvents.css"
 // import AddEvent from "../components/AddEvent";
 
 function AllEvents() {

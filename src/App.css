@@ -1,17 +1,22 @@
-@import url('http://fonts.googleapis.com/css?family=Open+Sans');
+@import url("http://fonts.googleapis.com/css?family=Open+Sans");
 
 .App {
-  text-align: center;
   background-color: #25262d;
   color: white;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-weight: 50;
   letter-spacing: 0.6px;
   overflow: auto;
   box-sizing: content-box;
 }
 
-.App img {
-  width: 35vw;
-  margin: 30px 0 0 0;
+.logo {
+  width: 30vw;
+  margin: 20px 0 0 35%;
+}
+
+.svg {
+  width: 100vw;
+  height: auto;
+  margin: 0;
 }

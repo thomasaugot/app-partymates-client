@@ -1,0 +1,23 @@
+.EventCard {
+  border: solid white 1px;
+  max-width: 27%;
+  margin: 2%;
+  padding: 0 10px 20px 10px;
+  border-radius: 5px;
+}
+
+.EventCard:hover {
+  border: 1px solid rgb(0, 191, 255);
+  box-shadow: 5px 5px 10px -5px;
+  transition: 0.4s;
+}
+
+.EventCard:hover h2 {
+  color: rgb(0, 191, 255);
+}
+
+.EventCard img {
+  width: 100%;
+  margin: 10px 0 0 0;
+}
+

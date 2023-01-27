@@ -7,6 +7,7 @@
     overflow: hidden;
     font-family: 'Urbanist', sans-serif;
     font-size: 0.5em; transform: scale(0.7, 0.9);
+    text-align: center;
 }
 
 .Navbar button {

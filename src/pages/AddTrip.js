@@ -1,10 +1,11 @@
 import axios from "axios";
 import { useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 function AddTrip(props) {
   const [description, setDescription] = useState("");
   const {eventId} = useParams();
+  const navigate = useNavigate();
     
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -17,11 +18,9 @@ function AddTrip(props) {
       .post(`${process.env.REACT_APP_SERVER_URL}/api/trips`, requestBody, {
         headers: { Authorization: `Bearer ${storedToken}` },
       })
-      .then((response) => {
-        console.log(response);
-        // Resets the state of the form
-        setDescription("");
-        props.refreshTrips();
+      .then(() => {
+        setDescription(""); // Resets the state of the form
+        navigate(`/events/${eventId}`)
       })
       .catch((error) => console.log(error));
   };
