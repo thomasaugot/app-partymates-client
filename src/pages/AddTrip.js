@@ -1,15 +1,16 @@
 import axios from "axios";
 import { useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
+import "./AddTrip.css";
 
 function AddTrip(props) {
   const [description, setDescription] = useState("");
-  const {eventId} = useParams();
+  const { eventId } = useParams();
   const navigate = useNavigate();
-    
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    
+
     const requestBody = { description, eventId }; // no need to store the creator id since backend does it already
     const storedToken = localStorage.getItem("authToken");
     console.log(requestBody);
@@ -20,22 +21,29 @@ function AddTrip(props) {
       })
       .then(() => {
         setDescription(""); // Resets the state of the form
-        navigate(`/events/${eventId}`)
+        navigate(`/events/${eventId}`);
       })
       .catch((error) => console.log(error));
   };
 
   return (
-    <div className="AddTrip">
-      <form onSubmit={handleSubmit}>
-        <label>Post a trip below</label>
-        <textarea
-          type="text"
-          name="description"
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
-        />
-        <button type="submit">Submit</button>
+    <div className="AddTripPage">
+      <form className="addForm" onSubmit={handleSubmit}>
+        <label className="addTitle">Share your ride</label>
+        <div className="borderForm">
+          <textarea
+            type="text"
+            rows="10"
+            cols="60"
+            name="description"
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
+          />
+        </div>
+
+        <button className="addBtn" type="submit">
+          Submit
+        </button>
       </form>
     </div>
   );

@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
+import "./EditTrip.css";
 
 function EditTrip(props) {
   const [description, setDescription] = useState("");
@@ -43,18 +44,26 @@ function EditTrip(props) {
 
   return (
     <div className="EditProjectPage">
-      <h3>Edit your post</h3>
+      <h3 className="editTitle">Edit your post</h3>
 
-      <form onSubmit={handleFormSubmit}>
-        <label>Description:</label>
-        <textarea
-          name="description"
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
-        />
-        <button type="submit">Update</button>
+      <form className="editForm" onSubmit={handleFormSubmit}>
+        <label>Message:</label>
+        <div className="borderForm">
+          <textarea
+            name="description"
+            rows="10"
+            cols="60"
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
+          />
+        </div>
+        <button className="editBtn" type="submit">
+          Update
+        </button>{" "}
+        <button className="editBtn " onClick={deleteTrip}>
+          Delete
+        </button>
       </form>
-      <button onClick={deleteTrip}>Delete</button>
     </div>
   );
 }

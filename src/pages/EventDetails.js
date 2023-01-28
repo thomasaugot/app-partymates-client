@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import TripCard from "../components/TripCard";
+import "./EventDetails.css";
 
 function EventDetails() {
   const [event, setEvent] = useState(null);
@@ -23,7 +24,7 @@ function EventDetails() {
 
   return (
     <div className="EventDetails">
-      <div>
+      <div className="firstColumn">
         {event && (
           <>
             <img src={event.image} alt="festival" />
@@ -32,34 +33,42 @@ function EventDetails() {
             <h4>Location: {event.location}</h4>
             <p>{event.description}</p>
             <h4>
-              <a target="_blank" rel="noreferrer" href={event.linkToTickets}>
+              <a
+                className="detailsLink"
+                target="_blank"
+                rel="noreferrer"
+                href={event.linkToTickets}
+              >
                 Get your tickets
               </a>
             </h4>
 
-            {/* <button onClick={}>I'm Going</button>
+            {/* <button className="detailsLink" onClick={}>I'm Going</button>
             <h4>{event.attendees} are going to this event</h4> */}
           </>
         )}
-      </div>
-      <div>
-        <Link to={`/events/${eventId}/share-your-trip`}>
-          Want to share a ride? Click here
+        <Link to="/events">
+          <button>Back</button>
         </Link>
       </div>
-      <div>
-        <h4>These people might be looking for you:</h4>{" "}
-        {event &&
-          event.tripsOrganized.map((trip) => (
-            <>
-              {console.log(trip)}
-              <TripCard key={trip._id} {...trip} />
-            </>
-          ))}
+      <div className="secondColumn">
+        <div className="detailsLink">
+          <Link className="textBtn" to={`/events/${eventId}/share-your-trip`}>
+            Want to share a ride? Click here.
+          </Link>
+        </div>
+        <h4 className="textRides">They might be looking for you:</h4>
+        <div>
+          {event &&
+            event.tripsOrganized.map((trip) => {
+              return (
+                <div>
+                  <TripCard key={trip._id} {...trip} />
+                </div>
+              );
+            })}
+        </div>
       </div>
-      <Link to="/events">
-        <button>Back</button>
-      </Link>
     </div>
   );
 }

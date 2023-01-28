@@ -1,0 +1,59 @@
+.EventDetails {
+  margin: 1vh 5vw;
+  display: flex;
+  text-align: center;
+}
+
+.firstColumn {
+  border-right: solid white 1px;
+  max-width: 40%;
+  padding: 0 8% 0 2%;
+  text-align: center;
+}
+
+.EventDetails img {
+  max-width: 100%;
+}
+
+.EventDetails p {
+    margin-bottom: 3vw;
+}
+
+.EventDetails button {
+  padding: 10px 25px;
+  border: none;
+  background-color: transparent;
+  color: white;
+  font-size: 1.5vw;
+  text-decoration: underline;
+  text-underline-offset: 8px;
+}
+
+.EventDetails button:hover {
+  color: rgb(0, 191, 255);
+}
+
+.detailsLink {
+  padding: 3% 7%;
+  font-size: 1.2vw;
+  border-radius: 40px;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  background-color: rgb(0, 191, 255);
+  border: solid 1px transparent;
+}
+
+.detailsLink:hover {
+    border: 1px solid white;
+    box-shadow: 3px 3px 8px -3px white;
+} 
+
+.secondColumn {
+    max-width: 40%;
+    padding: 5vh 0 0 12vw;
+}
+
+.textRides {
+    margin: 15% 0;
+}
