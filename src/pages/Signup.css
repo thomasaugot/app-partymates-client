@@ -2,8 +2,11 @@
     font-size: 1em;
     border: solid 1px white;
     width: 32vw;
-    margin: 2% 0 20% 34%;
-    border-radius: 5%; 
+    margin: 2% 0 20% 32%;
+    border-radius: 5%;
+    text-align: center;
+    padding: 2% 2%;
+    box-shadow: 5px 5px 10px -5px white;
 }
 
 .SignupPage form {
