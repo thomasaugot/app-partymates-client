@@ -8,7 +8,7 @@ function EventCard({ name, date, image, location, _id }) {
       <h2>{name}</h2>
       <h4>{date}</h4>
       <h4>{location}</h4>
-      <Link to={`/events/${_id}`}>More details</Link>
+      <Link className="moreDetails" to={`/events/${_id}`}>More details</Link>
     </div>
   );
 }

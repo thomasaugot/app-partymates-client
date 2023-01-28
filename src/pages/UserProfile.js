@@ -1,9 +1,8 @@
-import { Routes, Route, useParams } from 'react-router-dom';
-
-function ProfilePage() {
-  let { userId } = useParams();
+function UserProfile() {
 
   return(
-    <ProfilePage />
+    <div></div>
   )
 }
+
+export default UserProfile;
