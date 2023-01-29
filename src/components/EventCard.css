@@ -1,38 +1,56 @@
-.EventCard {
-  border: solid white 1px;
-  max-width: 27%;
-  margin: 2%;
-  padding: 0 10px 20px 10px;
-  border-radius: 5px;
-  text-align: center;
+@media only screen and (min-width: 600px) {
+  .EventCard {
+    border: solid white 1px;
+    max-width: 27%;
+    margin: 2%;
+    padding: 0 10px 20px 10px;
+    border-radius: 5px;
+    text-align: center;
+  }
+
+  .EventCard:hover {
+    border: 1px solid rgb(0, 191, 255);
+    box-shadow: 5px 5px 10px -5px;
+    transition: 0.4s;
+  }
+
+  .EventCard:hover h2 {
+    color: rgb(0, 191, 255);
+  }
+
+  .EventCard:hover h4 {
+    color: rgb(0, 191, 255);
+  }
+
+  .EventCard img {
+    max-width: 100%;
+    margin: 10px 0 0 0;
+  }
+
+  .moreDetails {
+    color: white;
+    font-size: 1.5vw;
+    text-decoration: underline;
+    text-underline-offset: 8px;
+  }
+
+  .EventCard:hover .moreDetails {
+    color: rgb(0, 191, 255);
+  }
 }
 
-.EventCard:hover {
-  border: 1px solid rgb(0, 191, 255);
-  box-shadow: 5px 5px 10px -5px;
-  transition: 0.4s;
-}
+@media only screen and (max-width: 600px) {
+  .EventCard {
+    border: solid white 1px;
+    max-width: 70%;
+    margin: 2% 0 2% 11%;
+    padding: 0 10px 20px 10px;
+    border-radius: 5px;
+    text-align: center;
+  }
 
-.EventCard:hover h2 {
-  color: rgb(0, 191, 255);
-}
-
-.EventCard:hover h4 {
-  color: rgb(0, 191, 255);
-}
-
-.EventCard img {
-  max-width: 100%;
-  margin: 10px 0 0 0;
-}
-
-.moreDetails {
-  color: white;
-  font-size: 1.5vw;
-  text-decoration: underline;
-  text-underline-offset: 8px;
-}
-
-.EventCard:hover .moreDetails {
-  color: rgb(0, 191, 255)
+  .EventCard img {
+    max-width: 100%;
+    margin: 2% 0;
+  }
 }
