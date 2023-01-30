@@ -19,7 +19,7 @@ function Navbar() {
 
       {isLoggedIn && (
         <>
-        <Link to="/my-profile"><button>My Profile</button></Link>
+        <Link to={`/profile/${user._id}`}><button>My Profile</button></Link>
         
           <button onClick={logOutUser}>Logout</button>
         </>

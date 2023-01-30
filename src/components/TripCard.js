@@ -3,8 +3,6 @@ import "./TripCard.css";
 
 function TripCard(props) {
   const { tripId, eventId } = useParams();
-  console.log(tripId);
-  console.log(eventId);
 
   return (
     <div className="tripCard">
@@ -12,7 +10,7 @@ function TripCard(props) {
       <h4>Message:</h4>
       <p>{props.description}</p>
       <p>Posted on {props.createdAt}</p>
-        <Link className="editBtn" to={`/events/${eventId}/share-your-trip/${tripId}/edit`}>
+        <Link className="editBtn" to={`/events/${eventId}/share-your-trip/${props.tripId}/edit`}>
           Edit post
         </Link>
     </div>

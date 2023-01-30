@@ -63,7 +63,7 @@ function EventDetails() {
             event.tripsOrganized.map((trip) => {
               return (
                 <div>
-                  <TripCard key={trip._id} {...trip} />
+                  <TripCard tripId={trip._id} key={trip._id} {...trip} />
                 </div>
               );
             })}

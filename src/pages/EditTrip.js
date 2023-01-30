@@ -8,6 +8,8 @@ function EditTrip(props) {
 
   const { tripId } = useParams();
   const navigate = useNavigate();
+  const eventId = props.eventId;
+  console.log(eventId)
 
   useEffect(() => {
     axios
@@ -29,7 +31,7 @@ function EditTrip(props) {
         requestBody
       )
       .then((response) => {
-        navigate(`/events/${props.eventId}`);
+        navigate(-1);
       });
   };
 
@@ -37,7 +39,7 @@ function EditTrip(props) {
     axios
       .delete(`${process.env.REACT_APP_SERVER_URL}/api/trips/${tripId}`)
       .then(() => {
-        navigate(`/events/${props.eventId}`);
+        navigate(-1);
       })
       .catch((err) => console.log(err));
   };
