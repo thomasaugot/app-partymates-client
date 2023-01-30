@@ -23,6 +23,7 @@ function Login(props) {
     axios
       .post(`${process.env.REACT_APP_SERVER_URL}/auth/login`, requestBody)
       .then((response) => {
+        console.log(requestBody);
         console.log("JWT token", response.data.authToken);
 
         storeToken(response.data.authToken);

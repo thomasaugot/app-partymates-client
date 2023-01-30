@@ -1,12 +1,15 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { useContext, useEffect, useState } from "react";
+import { Link, Navigate, useParams } from "react-router-dom";
 import TripCard from "../components/TripCard";
+import { AuthContext } from "../context/auth.context";
 import "./EventDetails.css";
 
 function EventDetails() {
   const [event, setEvent] = useState(null);
   const { eventId } = useParams();
+  const { user } = useContext(AuthContext);
+  const token = localStorage.getItem("authToken");
 
   const getEvent = () => {
     axios
@@ -18,9 +21,42 @@ function EventDetails() {
       .catch((error) => console.log(error));
   };
 
+  // adds user to attendees list of the event
+  const addAttendee = () => {
+
+    if (!user) {
+      Navigate(`/login`);
+      return;
+    }
+
+    axios
+      .put(
+        `${process.env.REACT_APP_SERVER_URL}/api/events/${event._id}/join`,
+        null,
+        { headers: { Authorization: `Bearer ${token}` } }
+      )
+      .then((response) => {
+        console.log("User added to events' attendees");
+      })
+      .catch((error) => console.log("error adding user"));
+  };
+
   useEffect(() => {
     getEvent();
   }, []);
+
+  const attendeesList = () => {
+    event.attendees.map((user) => {
+      console.log(user)
+      return (
+        <>
+          {user.name}
+        </>
+      )
+    })
+  }
+
+
 
   return (
     <div className="EventDetails">
@@ -43,8 +79,10 @@ function EventDetails() {
               </a>
             </h4>
 
-            {/* <button className="detailsLink" onClick={}>I'm Going</button>
-            <h4>{event.attendees} are going to this event</h4> */}
+            <button className="detailsLink" onClick={addAttendee}>
+              I'm Going
+            </button>
+            <h4>{attendeesList} are going to this event</h4> 
           </>
         )}
         <Link to="/events">

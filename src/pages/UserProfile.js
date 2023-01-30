@@ -11,11 +11,13 @@ function UserProfile() {
   const getUser = () => {
     const token = localStorage.getItem("authToken");
     axios
-      .get(`${process.env.REACT_APP_SERVER_URL}/api/profile/${userId}`, {headers: {Authorization : `Bearer ${token}` }})
+      .get(`${process.env.REACT_APP_SERVER_URL}/api/profile/${userId}`, {
+        headers: { Authorization: `Bearer ${token}` },
+      })
       .then((response) => {
         const userDetails = response.data;
-        console.log(userDetails)
-        console.log(userDetails.eventsAttending)
+        console.log(userDetails);
+        console.log(userDetails.eventsAttending);
         setUserDetails(userDetails);
       })
       .catch((error) => console.log(error));
@@ -31,7 +33,7 @@ function UserProfile() {
         <>
           <h2>Welcome, {userDetails.name} !</h2>
           <h4>Events you are attending:</h4>
-          {/* {userDetails.eventsAttending.map((event) => {
+          {userDetails.eventsAttending.map((event) => {
             return <div>{<EventCard />}</div>;
           })}
 
@@ -43,8 +45,8 @@ function UserProfile() {
                   <TripCard />
                 </div>
               );
-            })} */}
-          {/* </div> */}
+            })}
+          </div>
         </>
       )}
     </div>
