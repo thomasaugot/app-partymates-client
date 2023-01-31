@@ -9,7 +9,7 @@ function EditTrip(props) {
   const { tripId } = useParams();
   const navigate = useNavigate();
   const eventId = props.eventId;
-  console.log(eventId)
+  console.log(eventId);
 
   useEffect(() => {
     axios
@@ -39,7 +39,7 @@ function EditTrip(props) {
     axios
       .delete(`${process.env.REACT_APP_SERVER_URL}/api/trips/${tripId}`)
       .then(() => {
-        navigate(-1);
+        navigate(-2);
       })
       .catch((err) => console.log(err));
   };
@@ -52,6 +52,7 @@ function EditTrip(props) {
         <label>Message:</label>
         <div className="borderForm">
           <textarea
+            className="textarea"
             name="description"
             rows="10"
             cols="60"

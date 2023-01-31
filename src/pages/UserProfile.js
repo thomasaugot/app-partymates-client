@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import EventCard from "../components/EventCard";
 import TripCard from "../components/TripCard";
+import "../pages/userProfile.css"
 
 function UserProfile() {
   const [userDetails, setUserDetails] = useState(null);

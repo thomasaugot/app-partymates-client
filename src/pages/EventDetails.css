@@ -57,3 +57,51 @@
 .textRides {
     margin: 15% 0;
 }
+
+.textBtn {
+  padding: 3% 7%;
+  font-size: 1.2vw;
+  border-radius: 40px;
+  background-color: rgb(0, 191, 255);
+  border: solid 1px transparent;
+  margin-left: 4%;
+}
+
+.textBtn a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+.textBtn:hover {
+    border: 1px solid white;
+    box-shadow: 3px 3px 8px -3px white;
+} 
+
+.buttonsGoPost {
+  display: flex;
+  text-align: center;
+  align-items: center;
+}
+
+.EventDetails button {
+  padding: 3.8% 7%;
+  font-size: 1.2vw;
+  border-radius: 40px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  background-color: transparent;
+  border: solid 1px white;
+}
+
+.EventDetails button:hover {
+  border: 1px solid white;
+  box-shadow: 3px 3px 8px -3px white;
+} 
+
+.backLink {
+ background-color: transparent;
+ padding: 1% 5%;
+ margin-top: 25px;
+}

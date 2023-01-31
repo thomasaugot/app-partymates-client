@@ -35,7 +35,9 @@ function AddTrip(props) {
             type="text"
             rows="10"
             cols="60"
+            class="textarea"
             name="description"
+            placeholder="Please describe your trip, How many seats available do you have? Where will you depart from?"
             value={description}
             onChange={(e) => setDescription(e.target.value)}
           />

@@ -3,12 +3,11 @@ import { Link, useParams } from "react-router-dom";
 import { AuthContext } from "../context/auth.context";
 import "./TripCard.css";
 import dayjs from "dayjs";
+import axios from "axios";
 
 function TripCard(props) {
   const { tripId, eventId } = useParams();
   const { user } = useContext(AuthContext);
-
-  console.log(props)
 
   return (
     <div className="tripCard">
