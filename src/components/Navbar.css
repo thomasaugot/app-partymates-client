@@ -10,7 +10,7 @@
     text-align: center;
 }
 
-.Navbar button {
+.navbarButton {
     padding: 10px 25px;
     border: none;
     background-color: transparent;
@@ -20,10 +20,10 @@
     text-underline-offset: 8px;
 }
 
-.Navbar button:hover {
+.navbarButton:hover {
     color: rgb(0,191,255);
 }
 
-.Navbar a {
+.navbarA {
     color: transparent;
 }

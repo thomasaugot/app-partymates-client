@@ -4,10 +4,8 @@
   background-color: #25262d;
   color: white;
   font-family: "Open Sans", sans-serif;
-  font-weight: 50;
   letter-spacing: 0.6px;
   overflow-x: hidden;
-  box-sizing: content-box;
 }
 
 .logo {

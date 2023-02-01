@@ -65,59 +65,19 @@ function UserProfile() {
             <img src={userDetails.profilePicture} alt="profile" width="50" />
             <h2>Welcome, {userDetails.name} !</h2>
           </div>
-          <div className="carousel">
-            <Accordion>
+          <div >
+            <Accordion className="accordion">
               <Accordion.Item eventKey="0">
-                <Accordion.Header>Accordion Item #1</Accordion.Header>
+                <Accordion.Header className="accordionHeader">Events you are attending</Accordion.Header>
                 <Accordion.Body>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-                  irure dolor in reprehenderit in voluptate velit esse cillum
-                  dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                  cupidatat non proident, sunt in culpa qui officia deserunt
-                  mollit anim id est laborum.
-                </Accordion.Body>
-              </Accordion.Item>
-              <Accordion.Item eventKey="1">
-                <Accordion.Header>Accordion Item #2</Accordion.Header>
-                <Accordion.Body>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-                  irure dolor in reprehenderit in voluptate velit esse cillum
-                  dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                  cupidatat non proident, sunt in culpa qui officia deserunt
-                  mollit anim id est laborum.
-                </Accordion.Body>
-              </Accordion.Item>
-              <Accordion.Item eventKey="2">
-                <Accordion.Header>Accordion Item #3</Accordion.Header>
-                <Accordion.Body>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-                  irure dolor in reprehenderit in voluptate velit esse cillum
-                  dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                  cupidatat non proident, sunt in culpa qui officia deserunt
-                  mollit anim id est laborum.
-                </Accordion.Body>
-              </Accordion.Item>
-            </Accordion>
-
-            <div className="profileContent">
-              <div>
-                <h4>Events you are attending:</h4>
                 {userDetails.eventsAttending.map((event) => {
                   return <div className="cardsProfile">{<EventCard />}</div>;
                 })}
-              </div>
-
-              <div className="carousel">
-                <h4>Your posts:</h4>
+                </Accordion.Body>
+              </Accordion.Item>
+              <Accordion.Item eventKey="1">
+                <Accordion.Header>Your posts</Accordion.Header>
+                <Accordion.Body>
                 {userDetails.trips.map((trip) => {
                   return (
                     <div className="cardsProfile">
@@ -125,22 +85,20 @@ function UserProfile() {
                     </div>
                   );
                 })}
-              </div>
-
-              <div>
-                <h4>Your inbox:</h4>
+                </Accordion.Body>
+              </Accordion.Item>
+              <Accordion.Item eventKey="2">
+                <Accordion.Header>Your inbox</Accordion.Header>
+                <Accordion.Body>
                 <Message />
-              </div>
-            </div>
+                </Accordion.Body>
+              </Accordion.Item>
+            </Accordion>
           </div>
         </>
       )}
     </>
   );
-  <script
-    src="https://cdn.jsdelivr.net/npm/react/umd/react.production.min.js"
-    crossorigin
-  ></script>;
 }
 
 export default UserProfile;

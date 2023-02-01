@@ -14,6 +14,7 @@ import AddTrip from "./pages/AddTrip";
 import EditTrip from "./pages/EditTrip";
 import Footer from "./components/Footer";
 import UserProfile from "./pages/UserProfile";
+import MessageForm from "./pages/MessageForm";
 
 function App() {
   return (
@@ -77,6 +78,14 @@ function App() {
           element={
             <IsPrivate>
               <UserProfile />
+            </IsPrivate>
+          }
+        />
+        <Route
+          path="/message"
+          element={
+            <IsPrivate>
+              <MessageForm />
             </IsPrivate>
           }
         />

@@ -3,7 +3,6 @@ import axios from "axios";
 import EventCard from "../components/EventCard";
 import "./AllEvents.css";
 import SearchBar from "../components/SearchBar";
-// import AddEvent from "../components/AddEvent";
 
 function AllEvents() {
   const [events, setEvents] = useState([]);
@@ -22,7 +21,7 @@ function AllEvents() {
   return (
     <div >
       <div>
-        <SearchBar />
+        <SearchBar events={events}/>
       </div>
       <div className="AllEvents">
         {/* <h3>Can't find an event you are looking for? Add it</h3>

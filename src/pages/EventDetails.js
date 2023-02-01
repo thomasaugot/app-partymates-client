@@ -9,6 +9,7 @@ function EventDetails() {
   const [event, setEvent] = useState(null);
   const { eventId } = useParams();
   const { user } = useContext(AuthContext);
+  const [goingNotGoing, setgoingNotGoing] = useState("Going");
   const token = localStorage.getItem("authToken");
 
   const getEvent = () => {
@@ -21,9 +22,17 @@ function EventDetails() {
       .catch((error) => console.log(error));
   };
 
+  const getTrips = () => {
+    axios
+      .get(`${process.env.REACT_APP_SERVER_URL}/api/trips`)
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((error) => console.log(error));
+  }
+
   // adds user to attendees list of the event
   const addAttendee = () => {
-
     if (!user) {
       Navigate(`/login`);
       return;
@@ -36,41 +45,67 @@ function EventDetails() {
         { headers: { Authorization: `Bearer ${token}` } }
       )
       .then((response) => {
+        document.location.reload();
         console.log("User added to events' attendees");
       })
       .catch((error) => console.log("error adding user"));
   };
 
-  useEffect(() => {
-    getEvent();
-  }, []);
+  const addEventToUser = () => {
+    if (!user) {
+      Navigate(`/login`);
+      return;
+    }
 
-  const attendeesList = () => {
-    event.attendees.map((user) => {
-      console.log(user)
-      return (
-        <>
-          {user.name}
-        </>
+    axios
+      .put(
+        `${process.env.REACT_APP_SERVER_URL}/api/users/${user._id}/events`,
+        null,
+        { headers: { Authorization: `Bearer ${token}` } }
       )
-    })
+      .then((response) => {
+        console.log("Event added to user profile");
+      })
+      .catch((error) => console.log("error adding user"));
+  };
   }
 
+  useEffect(() => {
+    getEvent();
+    getTrips();
+  }, []);
 
+  // console.log(event.attendees);
+  // console.log(user._id);
+
+  const goingToEvent = () => {
+    event.attendees.includes(user._id);
+  };
+
+  //conditional rendering line 116
+  const attendeesListText = () => {
+    if (event?.attendees?.length === 0) {
+      return <>Be the first joining the event</>;
+    } else if (event?.attendees?.length === 1) {
+      return <>is joining the event</>;
+    } else {
+      return <>are going to this event</>;
+    }
+  };
 
   return (
     <div className="EventDetails">
       <div className="firstColumn">
         {event && (
           <>
-            <img src={event.image} alt="festival" />
-            <h2>{event.name}</h2>
+            <img src={event.image} alt="festival" className="EventDetailsImg"/>
+            <h2 className="eventDetailsH2">{event.name}</h2>
             <h4>Date: {event.date}</h4>
             <h4>Location: {event.location}</h4>
-            <p>{event.description}</p>
+            <p className="EventDetailsP">{event.description}</p>
             <h4>
               <a
-                className="detailsLink"
+                className="blueButton"
                 target="_blank"
                 rel="noreferrer"
                 href={event.linkToTickets}
@@ -78,27 +113,52 @@ function EventDetails() {
                 Get your tickets
               </a>
             </h4>
-
-            <button className="detailsLink" onClick={addAttendee}>
-              I'm Going
-            </button>
-            <h4>{attendeesList} are going to this event</h4> 
           </>
         )}
-        <Link to="/events">
-          <button>Back</button>
-        </Link>
-      </div>
-      <div className="secondColumn">
-        <div className="detailsLink">
-          <Link className="textBtn" to={`/events/${eventId}/share-your-trip`}>
-            Want to share a ride? Click here.
+        <div>
+          <Link to="/events">
+            <button className="backLink">Back</button>
           </Link>
         </div>
+      </div>
+      <div className="secondColumn">
+        <div className="buttonsGoPost">
+          {goingToEvent && (
+            <>
+              <button onClick={addAttendee} className="blueButton">
+                I'm Going
+              </button>
+            </>
+          )}
+
+          {!goingToEvent && (
+            <>
+              <button onClick={addAttendee} className="transparentBtn">I'm Going</button>
+            </>
+          )}
+          <div>
+            <Link className="offerRideBtn" to={`/events/${eventId}/share-your-trip`}>Offer a Ride</Link>
+          </div>
+        </div>
+        <h4 className="eventDetailsH4">
+          {event &&
+            event?.attendees?.map((user) => {
+              console.log(user);
+              return (
+                <Link
+                  style={{ textDecoration: "none", color: "white" }}
+                  to={`profile/${user._id}`}
+                >
+                  <>{user.name} </>
+                </Link>
+              );
+            })}
+          {attendeesListText()}
+        </h4>
         <h4 className="textRides">They might be looking for you:</h4>
         <div>
           {event &&
-            event.tripsOrganized.map((trip) => {
+            event?.tripsOrganized?.map((trip) => {
               return (
                 <div>
                   <TripCard tripId={trip._id} key={trip._id} {...trip} />

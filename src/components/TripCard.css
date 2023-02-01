@@ -1,11 +1,15 @@
-.tripCard {
+.tripCardEventDetails {
   border: solid white 0.5px;
-  max-width: 100%;
+ width: 28vw;
   margin: 4% 0 0 0;
-  padding: 5px 20px 20px 20px;
+  padding: 10%;
   border-radius: 5px;
   text-align: center;
   box-shadow: 5px 5px 10px -5px white;
+}
+
+.tripCardEventDetailsP {
+  font-size: 80%;
 }
 
 .editBtn {
@@ -23,4 +27,29 @@
   border: 1px solid white;
   box-shadow: 5px 5px 10px -5px white;
   transition: 0.4s;
+}
+
+.tripCardEventDetailsH4 {
+  font-size: 1.3vw;
+  margin-bottom: 6%;
+}
+
+.sendMessageBtn {
+  border: solid transparent 0.5px;
+  margin: 2% 0 10% 0;
+  padding: 3px 20px;
+  border-radius: 5px;
+  text-align: center;
+  text-decoration: none;
+  color: black;
+  background-color: rgb(0, 191, 255);
+}
+
+.sendMessageBtn:hover {
+  border: 1px solid white;
+  box-shadow: 3px 3px 8px -3px white;
+}
+
+*, ::after, ::before {
+  box-sizing: content-box;
 }

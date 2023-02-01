@@ -35,6 +35,7 @@ function AddTrip(props) {
             type="text"
             rows="10"
             cols="60"
+            wrap="soft"
             class="textarea"
             name="description"
             placeholder="Please describe your trip, How many seats available do you have? Where will you depart from?"

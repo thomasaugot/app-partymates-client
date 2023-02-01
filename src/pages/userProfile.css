@@ -1,4 +1,32 @@
-.userProfile {
+.profileHeader {
   text-align: center;
+}
 
+.accordion {
+  background-color: #25262d;
+  margin: 5% 0;
+}
+
+.cardsProfile {
+  max-width: 25vw;
+  font-size: smaller;
+  color: white;
+  margin: 2%;
+}
+
+.accordion-body {
+  background-color: #25262d;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	align-content: space-between;
+}
+
+.accordionHeader {
+  background-color: rgb(0, 191, 255);
+}
+
+.accordion-collapse collapse {
+  background-color: #25262d;
 }

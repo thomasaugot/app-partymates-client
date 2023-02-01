@@ -1,40 +1,33 @@
 .EventDetails {
-  margin: 1vh 5vw;
+  margin: 1vh 0;
   display: flex;
   text-align: center;
+  justify-content: center;
 }
 
 .firstColumn {
   border-right: solid white 1px;
-  max-width: 40%;
   padding: 0 8% 0 2%;
+  width: 40vw;
   text-align: center;
 }
 
-.EventDetails img {
+.EventDetailsImg {
   max-width: 100%;
 }
 
-.EventDetails p {
+.eventDetailsH2 {
+  font-size: 4vw;
+  margin: 2vh;
+}
+
+.EventDetailsP {
     margin-bottom: 3vw;
+    font-weight: lighter;
 }
 
-.EventDetails button {
-  padding: 10px 25px;
-  border: none;
-  background-color: transparent;
-  color: white;
-  font-size: 1.5vw;
-  text-decoration: underline;
-  text-underline-offset: 8px;
-}
-
-.EventDetails button:hover {
-  color: rgb(0, 191, 255);
-}
-
-.detailsLink {
-  padding: 3% 7%;
+.blueButton {
+  padding: 4% 10%;
   font-size: 1.2vw;
   border-radius: 40px;
   text-decoration: none;
@@ -42,50 +35,43 @@
   font-weight: bold;
   background-color: rgb(0, 191, 255);
   border: solid 1px transparent;
+  margin-bottom: 4vh;
 }
 
-.detailsLink:hover {
+.blueButton:hover {
     border: 1px solid white;
     box-shadow: 3px 3px 8px -3px white;
+    color: black;
 } 
 
 .secondColumn {
-    max-width: 40%;
-    padding: 5vh 0 0 12vw;
+    padding: 5vh 0 0 8vw;
+    width: 40vw;
 }
 
 .textRides {
     margin: 15% 0;
 }
 
-.textBtn {
-  padding: 3% 7%;
+.offerRideBtn {
+  padding: 4% 10%;
   font-size: 1.2vw;
   border-radius: 40px;
-  background-color: rgb(0, 191, 255);
-  border: solid 1px transparent;
-  margin-left: 4%;
-}
-
-.textBtn a {
   text-decoration: none;
   color: black;
   font-weight: bold;
+  background-color: rgb(0, 191, 255);
+  border: solid 1px transparent;
 }
 
-.textBtn:hover {
-    border: 1px solid white;
-    box-shadow: 3px 3px 8px -3px white;
-} 
-
-.buttonsGoPost {
-  display: flex;
-  text-align: center;
-  align-items: center;
+.offerRideBtn:hover {
+  border: 1px solid white;
+  box-shadow: 3px 3px 8px -3px white;
+  color: black;
 }
 
-.EventDetails button {
-  padding: 3.8% 7%;
+.transparentBtn {
+  padding: 4% 10%;
   font-size: 1.2vw;
   border-radius: 40px;
   text-decoration: none;
@@ -93,15 +79,26 @@
   font-weight: bold;
   background-color: transparent;
   border: solid 1px white;
+  margin-bottom: 2vh;
 }
 
-.EventDetails button:hover {
+.transparentBtn:hover {
   border: 1px solid white;
   box-shadow: 3px 3px 8px -3px white;
-} 
+}
 
 .backLink {
- background-color: transparent;
- padding: 1% 5%;
- margin-top: 25px;
+  border: none;
+  margin-top: 5vh;
+  text-decoration: underline;
+  text-underline-offset: 8px;
+  background-color: transparent;
+  color: white;
+  font-size: larger;
+  font-weight: lighter;
+}
+
+.eventDetailsH4 {
+  margin: 7vh 0 0 0;
+  font-size: 1.5vw;
 }
