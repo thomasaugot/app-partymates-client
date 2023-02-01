@@ -21,6 +21,8 @@
   .AddTripPage textarea {
       border: none;
       border-radius: 3px;
+      box-sizing: border-box;
+      width: 100%;
   }
   
   .addTitle {

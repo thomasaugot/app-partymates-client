@@ -22,14 +22,6 @@ function EventDetails() {
       .catch((error) => console.log(error));
   };
 
-  const getTrips = () => {
-    axios
-      .get(`${process.env.REACT_APP_SERVER_URL}/api/trips`)
-      .then((response) => {
-        console.log(response);
-      })
-      .catch((error) => console.log(error));
-  }
 
   // adds user to attendees list of the event
   const addAttendee = () => {
@@ -68,11 +60,9 @@ function EventDetails() {
       })
       .catch((error) => console.log("error adding user"));
   };
-  }
 
   useEffect(() => {
     getEvent();
-    getTrips();
   }, []);
 
   // console.log(event.attendees);
@@ -143,7 +133,6 @@ function EventDetails() {
         <h4 className="eventDetailsH4">
           {event &&
             event?.attendees?.map((user) => {
-              console.log(user);
               return (
                 <Link
                   style={{ textDecoration: "none", color: "white" }}
@@ -161,7 +150,7 @@ function EventDetails() {
             event?.tripsOrganized?.map((trip) => {
               return (
                 <div>
-                  <TripCard tripId={trip._id} key={trip._id} {...trip} />
+                  <TripCard creationDate={trip.createdAt} tripId={trip._id} creatorName={trip.creator.name} creatorId={trip.creator._id} tripMessage={trip.description} key={trip._id} />
                 </div>
               );
             })}

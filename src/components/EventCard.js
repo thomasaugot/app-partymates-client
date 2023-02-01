@@ -4,11 +4,14 @@ import "./EventCard.css";
 function EventCard({ name, date, image, location, _id }) {
   return (
     <div className="EventCard">
-      <img src={image} alt='festival'/>
-      <h2 className="eventCardTitle">{name}</h2>
-      <h4>{date}</h4>
-      <h4>{location}</h4>
-      <Link className="moreDetails" to={`/events/${_id}`}>More details</Link>
+      <Link to={`/events/${_id}`}>
+        <div>
+          <img src={image} alt="festival" />
+          <h2 className="eventCardTitle">{name}</h2>
+          <h4 className="eventCardInfo">{date}</h4>
+          <h4 className="eventCardInfo">{location}</h4>
+        </div>
+      </Link>
     </div>
   );
 }

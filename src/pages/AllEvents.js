@@ -20,9 +20,9 @@ function AllEvents() {
 
   return (
     <div >
-      <div>
+      {/* <div>
         <SearchBar events={events}/>
-      </div>
+      </div> */}
       <div className="AllEvents">
         {/* <h3>Can't find an event you are looking for? Add it</h3>
       <AddEvent refreshEvents={getAllEvents} /> */}

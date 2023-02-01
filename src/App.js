@@ -14,7 +14,7 @@ import AddTrip from "./pages/AddTrip";
 import EditTrip from "./pages/EditTrip";
 import Footer from "./components/Footer";
 import UserProfile from "./pages/UserProfile";
-import MessageForm from "./pages/MessageForm";
+import MessageForm from "./components/MessageForm";
 
 function App() {
   return (

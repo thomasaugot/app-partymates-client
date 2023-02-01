@@ -6,17 +6,8 @@
     padding: 0 10px 20px 10px;
     border-radius: 5px;
     text-align: center;
-  }
-
-  .eventCardTitle {
-    padding: 8% 0;
-  }
-  
-  .moreDetails {
+    text-decoration: none;
     color: white;
-    font-size: 1.5vw;
-    text-decoration: underline;
-    text-underline-offset: 8px;
   }
 
   .EventCard:hover {
@@ -24,12 +15,23 @@
     box-shadow: 5px 5px 10px -5px;
     color: rgb(0, 191, 255);
     transition: 0.4s;
+    cursor: pointer;
   }
 
+  .eventCardTitle {
+    padding: 8% 0;
+    color: white;
+    text-decoration: none;
+  }
 
   .EventCard img {
     max-width: 100%;
     margin: 10px 0 0 0;
+  }
+
+  .eventCardInfo {
+    color: white;
+    text-decoration: none;
   }
 }
 
