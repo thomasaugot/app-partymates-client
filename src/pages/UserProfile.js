@@ -2,21 +2,24 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import EventCard from "../components/EventCard";
-import Message from "../components/Message";
 import TripCard from "../components/TripCard";
 import service from "../api/service";
 import "../pages/userProfile.css";
 import { Accordion } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { computeHeadingLevel } from "@testing-library/react";
 
 function UserProfile() {
   const [userDetails, setUserDetails] = useState(null);
+  const [messages, setMessages] = useState([]);
   const { userId } = useParams();
   const [profilePicture, setProfilePicture] = useState("");
   const [isUploadingImage, setIsUploadingImage] = useState(false);
+  const token = localStorage.getItem("authToken");
+
+  // console.log(messages);
 
   const getUser = () => {
-    const token = localStorage.getItem("authToken");
     axios
       .get(`${process.env.REACT_APP_SERVER_URL}/api/profile/${userId}`, {
         headers: { Authorization: `Bearer ${token}` },
@@ -24,8 +27,20 @@ function UserProfile() {
       .then((response) => {
         const userDetails = response.data;
         console.log(userDetails);
-        console.log(userDetails.eventsAttending);
+        // console.log(userDetails.eventsAttending);
         setUserDetails(userDetails);
+      })
+      .catch((error) => console.log(error));
+  };
+
+  const getMessages = () => {
+    axios
+      .get(`${process.env.REACT_APP_SERVER_URL}/api/messages`, {
+        headers: { Authorization: `Bearer ${token}` },
+      })
+      .then((response) => {
+        // console.log(response.data.messages);
+        setMessages(response.data.messages);
       })
       .catch((error) => console.log(error));
   };
@@ -50,6 +65,8 @@ function UserProfile() {
 
   useEffect(() => {
     getUser();
+    getMessages();
+    // displayMessages();
   }, []);
 
   return (
@@ -65,32 +82,48 @@ function UserProfile() {
             <img src={userDetails.profilePicture} alt="profile" width="50" />
             <h2>Welcome, {userDetails.name} !</h2>
           </div>
-          <div >
+          <div>
             <Accordion className="accordion">
               <Accordion.Item eventKey="0">
-                <Accordion.Header className="accordionHeader">Events you are attending</Accordion.Header>
+                <Accordion.Header className="accordionHeader">
+                  Events you are attending
+                </Accordion.Header>
                 <Accordion.Body>
-                {userDetails.eventsAttending.map((event) => {
-                  return <div className="cardsProfile">{<EventCard />}</div>;
-                })}
+                  {userDetails?.eventsAttending.map((event) => {
+                    return <div className="cardsProfile">{<EventCard />}</div>;
+                  })}
                 </Accordion.Body>
               </Accordion.Item>
               <Accordion.Item eventKey="1">
                 <Accordion.Header>Your posts</Accordion.Header>
                 <Accordion.Body>
-                {userDetails.trips.map((trip) => {
-                  return (
-                    <div className="cardsProfile">
-                      <TripCard />
-                    </div>
-                  );
-                })}
+                  {userDetails?.trips?.map((trip) => {
+                    return (
+                      <div className="cardsProfile">
+                        <h4>{trip.eventName}</h4>
+                        <p>{trip.description}</p>
+                        <h6>Created on {trip.createdAt}</h6>
+                      </div>
+                    );
+                  })}
                 </Accordion.Body>
               </Accordion.Item>
               <Accordion.Item eventKey="2">
                 <Accordion.Header>Your inbox</Accordion.Header>
                 <Accordion.Body>
-                <Message />
+                  {messages?.map((message) => {
+                    // console.log(message);
+                    if (userId === message.recipient) {
+                      return (
+                        <div className="cardsProfile">
+                          <h4>From {message._id}</h4>
+                          <p>{message.content}</p>
+                        </div>
+                      );
+                    } else if (messages.length === 0) {
+                      return <>No messages yet...</>;
+                    }
+                  })}
                 </Accordion.Body>
               </Accordion.Item>
             </Accordion>

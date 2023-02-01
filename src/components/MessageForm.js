@@ -11,22 +11,14 @@ function MessageForm(props) {
     const requestBody = { content, recipient }; // no need to store the creator id since backend does it already
     const storedToken = localStorage.getItem("authToken");
 
-    console.log("---------------------------------------------------------------")
-    console.log(requestBody)
-
     axios
-      .post(
-        `${process.env.REACT_APP_SERVER_URL}/api/messages`,
-        requestBody,
-        {
-          headers: { Authorization: `Bearer ${storedToken}` },
-        }
-      )
+      .post(`${process.env.REACT_APP_SERVER_URL}/api/messages`, requestBody, {
+        headers: { Authorization: `Bearer ${storedToken}` },
+      })
       .then((response) => {
-        console.log("---------------------------------------------------------------")
         console.log(response)
-        setContent("");
-        return <>Sent!</>;
+        setContent("")
+        return <>Sent!</>
       })
       .catch((error) => console.log(error));
   };
@@ -49,7 +41,7 @@ function MessageForm(props) {
             name="description"
             placeholder="Write your message here"
             value={content}
-            style={{ boxSizing: "borderBox", width: "100%"}}
+            style={{ boxSizing: "borderBox", width: "100%" }}
             onChange={(event) => setContent(event.target.value)}
           />
         </div>
