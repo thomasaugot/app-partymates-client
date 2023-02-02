@@ -1,16 +1,19 @@
 import { useState, useEffect } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, useLocation } from "react-router-dom";
 import axios from "axios";
 import "./EditTrip.css";
 
-function EditTrip(props) {
+function EditTrip() {
   const [description, setDescription] = useState("");
+  const location = useLocation();
+  const { content } = location.state; //to be used to acces props from Link on prev. page
 
+  console.log("these are my edit", content);
   const { tripId } = useParams();
   const navigate = useNavigate();
-  const eventId = props.eventId;
-  console.log('this is my tripID', props.tripId);
-  console.log('this is my eventID', props.eventId);
+  // const eventId = props.eventId;
+  // console.log('this is my tripID', props.tripId);
+  // console.log('this is my eventID', props.eventId);
 
   useEffect(() => {
     axios
@@ -53,6 +56,7 @@ function EditTrip(props) {
         <label>Message:</label>
         <div className="borderForm">
           <textarea
+            defaultValue={content}
             className="textarea"
             name="description"
             rows="10"
@@ -63,7 +67,7 @@ function EditTrip(props) {
         </div>
         <button className="editBtn" type="submit">
           Update
-        </button>{" "}
+        </button>
         <button className="editBtn " onClick={deleteTrip}>
           Delete
         </button>

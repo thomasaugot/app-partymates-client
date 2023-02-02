@@ -10,8 +10,7 @@ function TripCard(props) {
   const { tripId, eventId } = useParams();
   const { user } = useContext(AuthContext);
 
-  console.log(' my props are: ',props)
-  console.log(props.tripId);
+  const content = props.tripMessage;
 
   return (
     <div className="tripCardEventDetails">
@@ -20,15 +19,14 @@ function TripCard(props) {
       <p className="tripCardEventDetailsP">{props.tripMessage}</p>
       <p>Posted on {dayjs(props.creationDate).format("MMM D, YYYY h:mm A")}</p>
       {props.creatorId === user?._id && (
-        <Link tripId={props.tripId} eventId={eventId}
+        <Link to={ `/events/${eventId}/share-your-trip/${props.tripId}/edit`} state= {{content:content} }
           className="editBtn"
-          to={`/events/${eventId}/share-your-trip/${props.tripId}/edit`}
         >
           Edit post
         </Link>
       )}
       {props.creatorId !== user?._id && (
-        <MessageForm recipient={props.creatorId} />
+        <MessageForm creator={user} recipient={props.creatorId} />
       )}
     </div>
   );

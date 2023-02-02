@@ -8,7 +8,7 @@ import EventDetails from "./pages/EventDetails";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import IsAnon from "./components/IsAnon";
-import AddEvent from "./components/AddEvent";
+import AddEvent from "./pages/AddEvent";
 import IsPrivate from "./components/IsPrivate";
 import AddTrip from "./pages/AddTrip";
 import EditTrip from "./pages/EditTrip";
@@ -32,6 +32,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/events" element={<AllEvents />} />
+        <Route path="/events/create" element={<AddEvent />} />
         <Route path="/events/:eventId" element={<EventDetails />} />
         <Route
           path="/signup"
