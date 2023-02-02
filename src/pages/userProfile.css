@@ -30,3 +30,18 @@
 .accordion-collapse collapse {
   background-color: #25262d;
 }
+
+.cardsProfile {
+  border: solid white 1px;
+  max-width: 30%;
+  margin: 2%;
+  padding: 7px 10px 20px 10px;
+  border-radius: 5px;
+  text-align: center;
+  color: white;
+  box-shadow: 5px 5px 10px -5px white;
+}
+
+.cardsProfileH4 {
+  font-size: 100%;
+}

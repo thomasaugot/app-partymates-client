@@ -8,6 +8,7 @@ import "../pages/userProfile.css";
 import { Accordion } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { computeHeadingLevel } from "@testing-library/react";
+import MessageForm from "../components/MessageForm";
 
 function UserProfile() {
   const [userDetails, setUserDetails] = useState(null);
@@ -66,7 +67,6 @@ function UserProfile() {
   useEffect(() => {
     getUser();
     getMessages();
-    // displayMessages();
   }, []);
 
   return (
@@ -74,12 +74,12 @@ function UserProfile() {
       {userDetails && (
         <>
           <div className="profileHeader">
-            <input
+            {/* <input
               type="file"
               onChange={(e) => handleFileUpload(e)}
               style={{ borderRadius: "10px", padding: "10px 20px" }}
             />
-            <img src={userDetails.profilePicture} alt="profile" width="50" />
+            <img src={userDetails.profilePicture} alt="profile" width="50" /> */}
             <h2>Welcome, {userDetails.name} !</h2>
           </div>
           <div>
@@ -90,6 +90,7 @@ function UserProfile() {
                 </Accordion.Header>
                 <Accordion.Body>
                   {userDetails?.eventsAttending.map((event) => {
+                    console.log(event)
                     return <div className="cardsProfile">{<EventCard />}</div>;
                   })}
                 </Accordion.Body>
@@ -112,12 +113,13 @@ function UserProfile() {
                 <Accordion.Header>Your inbox</Accordion.Header>
                 <Accordion.Body>
                   {messages?.map((message) => {
-                    // console.log(message);
+                    console.log("this is my message",message)
                     if (userId === message.recipient) {
                       return (
                         <div className="cardsProfile">
-                          <h4>From {message._id}</h4>
-                          <p>{message.content}</p>
+                          {/* From<h4 className="cardsProfileH4"> {message.creator.user.name}</h4> */}
+                          <p className="cardsProfileP">{message.content}</p>
+                          <MessageForm recipient={message.recipient} />
                         </div>
                       );
                     } else if (messages.length === 0) {
