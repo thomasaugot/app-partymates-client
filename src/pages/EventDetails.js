@@ -1,9 +1,9 @@
 import axios from "axios";
 import { useContext, useEffect, useState } from "react";
 import { Link, Navigate, useParams } from "react-router-dom";
-import AttendeesList from "../components/AttendeesList";
 import TripCard from "../components/TripCard";
 import { AuthContext } from "../context/auth.context";
+import AttendeesList from "../components/AttendeesList";
 import "./EventDetails.css";
 
 function EventDetails() {
