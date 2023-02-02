@@ -26,6 +26,10 @@
     font-weight: lighter;
 }
 
+.buttonsGoPost {
+
+}
+
 .blueButton {
   padding: 4% 10%;
   font-size: 1.2vw;
@@ -35,7 +39,6 @@
   font-weight: bold;
   background-color: rgb(0, 191, 255);
   border: solid 1px transparent;
-  margin-bottom: 4vh;
 }
 
 .blueButton:hover {
@@ -99,6 +102,6 @@
 }
 
 .eventDetailsH4 {
-  margin: 7vh 0 0 0;
+  margin: 2vh 0 8vh 0;
   font-size: 1.5vw;
 }

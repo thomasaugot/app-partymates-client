@@ -7,8 +7,9 @@ import service from "../api/service";
 import "../pages/userProfile.css";
 import { Accordion } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { computeHeadingLevel } from "@testing-library/react";
-import MessageForm from "../components/MessageForm";
+import dayjs from "dayjs";
+import ReplyForm from "../components/ReplyForm";
+
 
 function UserProfile() {
   const [userDetails, setUserDetails] = useState(null);
@@ -103,9 +104,9 @@ function UserProfile() {
                     console.log(trip)
                     return (
                       <div className="cardsProfile">
-                        <h4>{trip.eventName.name}</h4>
-                        <p>{trip.description}</p>
-                        <h6>Created on {trip.createdAt}</h6>
+                        <h4 className="cardsProfileH4">@ {trip.eventName.name}</h4>
+                        <p className="cardsProfileP">{trip.description}</p>
+                        <h6 className="cardsProfileH6">{dayjs(trip.createdAt).format("MMM D, YYYY h:mm A")}</h6>
                       </div>
                     );
                   })}
@@ -115,13 +116,13 @@ function UserProfile() {
                 <Accordion.Header>Your inbox</Accordion.Header>
                 <Accordion.Body>
                   {messages?.map((message) => {
-                    {/* console.log("this is my message",message) */}
+                    console.log('this is the message from profile',message)
                     if (userId === message.recipient) {
                       return (
                         <div className="cardsProfile">
-                          {/* From<h4 className="cardsProfileH4"> {message.creator.user.name}</h4> */}
+                          From <h4 className="cardsProfileH4">{message.creator.name}</h4>
                           <p className="cardsProfileP">{message.content}</p>
-                          <MessageForm recipient={message.recipient} />
+                          <ReplyForm recipient={message.creator} />
                         </div>
                       );
                     } else if (messages.length === 0) {

@@ -2,12 +2,13 @@ import axios from "axios";
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../context/auth.context";
 
-function MessageForm(props) {
+function ReplyForm(props) {
   const [content, setContent] = useState("");
   const [stateMessage, setStateMessage] = useState(null)
   const recipient = props.recipient;
   const creator = useContext(AuthContext);
-  console.log("this is the creator", creator)
+
+  console.log("this is the creator", props)
 
   const handleSubmit = (event) => {
     event && event.preventDefault();
@@ -58,4 +59,4 @@ function MessageForm(props) {
     </div>
   );
 }
-export default MessageForm;
+export default ReplyForm;

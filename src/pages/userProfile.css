@@ -35,7 +35,7 @@
   border: solid white 1px;
   max-width: 30%;
   margin: 2%;
-  padding: 7px 10px 20px 10px;
+  padding: 2%;
   border-radius: 5px;
   text-align: center;
   color: white;
@@ -43,5 +43,18 @@
 }
 
 .cardsProfileH4 {
-  font-size: 100%;
+  font-size: 170%;
+  font-weight: bolder;
+}
+
+.cardsProfileH6 {
+  font-size: small;
+}
+
+.cardsProfileP {
+  border: solid rgb(0, 191, 255) 1px;
+  padding: 4%;
+  margin: 6% 0;
+  border-radius: 5px;
+  font-size: 1.2em;
 }

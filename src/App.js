@@ -15,6 +15,7 @@ import EditTrip from "./pages/EditTrip";
 import Footer from "./components/Footer";
 import UserProfile from "./pages/UserProfile";
 import MessageForm from "./components/MessageForm";
+import ReplyForm from "./components/ReplyForm";
 
 function App() {
   return (
@@ -87,6 +88,7 @@ function App() {
           element={
             <IsPrivate>
               <MessageForm />
+              <ReplyForm />
             </IsPrivate>
           }
         />
