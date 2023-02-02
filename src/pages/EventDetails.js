@@ -39,8 +39,8 @@ function EventDetails() {
           <>
             <img src={event.image} alt="festival" className="EventDetailsImg" />
             <h2 className="eventDetailsH2">{event.name}</h2>
-            <h4>Date: {event.date}</h4>
-            <h4>Location: {event.location}</h4>
+            <h4 className="eventDetailH4">Date: {event.date}</h4>
+            <h4 className="eventDetailH4">Location: {event.location}</h4>
             <p className="EventDetailsP">{event.description}</p>
             <h4>
               <a

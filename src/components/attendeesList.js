@@ -6,15 +6,9 @@ import { AuthContext } from "../context/auth.context";
 function AttendeesList({ event, eventDetails, isGoing }) {
   const { user } = useContext(AuthContext);
   const token = localStorage.getItem("authToken");
- 
 
 console.log(isGoing);
 
-
-// console.log('this is my event' , event)
-// console.log('this is my user', user)
-
-// adds or removes user to attendees list of the event
   const addAttendee = () => {
     if (!user) {
       Navigate(`/login`);
@@ -28,16 +22,13 @@ console.log(isGoing);
         { headers: { Authorization: `Bearer ${token}` } }
       )
       .then((response) => {
-        // console.log("User added to events' attendees");
-        // console.log(response.data);
         return axios.put(`${process.env.REACT_APP_SERVER_URL}/auth/profile/${user._id}/favorites/${event}`,
           null,
           { headers: { Authorization: `Bearer ${token}` } }
         )
       })
       .then((response) => {
-        // console.log(response.data);
-        // console.log("Event added to user profile");
+        console.log(response.data);
       })
       .catch((error) => console.log("error adding USER to EVENT"));
   };
@@ -47,7 +38,6 @@ console.log(isGoing);
     eventDetails.attendees.includes(user._id);
   };
 
-  //conditional rendering line 116
   const attendeesListText = () => {
     if (eventDetails?.attendees?.length === 0) {
       return <>Be the first joining the event</>;

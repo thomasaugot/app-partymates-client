@@ -2,3 +2,8 @@
     margin: 3% 0;
     text-align: center;
 }
+
+.linkedin {
+    color: white;
+    text-underline-offset: 4px;
+}

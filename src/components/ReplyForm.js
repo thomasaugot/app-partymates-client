@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../context/auth.context";
 
 function ReplyForm(props) {
@@ -21,18 +21,12 @@ function ReplyForm(props) {
         headers: { Authorization: `Bearer ${storedToken}` },
       })
       .then((response) => {
-        // console.log(response)
         setContent("")
         setStateMessage("Sent!")
         return 
       })
       .catch((error) => console.log(error));
   };
-
-  //so that element refreshes upon submit without reloading page
-//   useEffect((event) => {
-//     handleSubmit(event);
-//   }, []);
 
   return (
     <div>
@@ -51,7 +45,7 @@ function ReplyForm(props) {
             onChange={(event) => setContent(event.target.value)}
           />
         </div>
-        <div>{stateMessage}</div>
+        <div style={{fontSize: "1.8vw"}}>{stateMessage}</div>
         <button className="addBtn" type="submit">
           Submit
         </button>

@@ -5,8 +5,6 @@ function SearchBar(props) {
   const [searchValue, setsearchValue] = useState("");
   const { allEvents } = props;
 
-  // console.log(props)
-
   const searchResult = allEvents?.filter((eventObj) => {
     let result = eventObj.name
       .toLowerCase()

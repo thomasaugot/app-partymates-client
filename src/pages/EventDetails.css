@@ -1,7 +1,6 @@
 .EventDetails {
   margin: 1vh 0;
   display: flex;
-  text-align: center;
   justify-content: center;
 }
 
@@ -18,16 +17,16 @@
 
 .eventDetailsH2 {
   font-size: 4vw;
-  margin: 2vh;
+  margin: 2.5vh;
+}
+
+.eventDetailH4{
+margin: 6%;
 }
 
 .EventDetailsP {
     margin-bottom: 3vw;
     font-weight: lighter;
-}
-
-.buttonsGoPost {
-
 }
 
 .blueButton {

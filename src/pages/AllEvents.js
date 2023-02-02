@@ -2,9 +2,9 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import EventCard from "../components/EventCard";
 import "./AllEvents.css";
-import SearchBar from "../components/SearchBar";
-import AddEvent from "./AddEvent";
-import { Link } from "react-router-dom";
+// import SearchBar from "../components/SearchBar";
+// import AddEvent from "./AddEvent";
+// import { Link } from "react-router-dom";
 
 function AllEvents() {
   const [events, setEvents] = useState([]);

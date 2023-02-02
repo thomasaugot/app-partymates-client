@@ -20,7 +20,6 @@ function MessageForm(props) {
         headers: { Authorization: `Bearer ${storedToken}` },
       })
       .then((response) => {
-        // console.log(response)
         setContent("")
         setStateMessage("Sent!")
         return 
@@ -28,10 +27,10 @@ function MessageForm(props) {
       .catch((error) => console.log(error));
   };
 
-  //so that element refreshes upon submit without reloading page
-//   useEffect((event) => {
-//     handleSubmit(event);
-//   }, []);
+  // so that element refreshes upon submit without reloading page
+  useEffect((event) => {
+    handleSubmit(event);
+  }, []);
 
   return (
     <div>
@@ -50,7 +49,7 @@ function MessageForm(props) {
             onChange={(event) => setContent(event.target.value)}
           />
         </div>
-        <div>{stateMessage}</div>
+        <div style={{fontSize: "1.8vw"}}>{stateMessage}</div>
         <button className="addBtn" type="submit">
           Submit
         </button>

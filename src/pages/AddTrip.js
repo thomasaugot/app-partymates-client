@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import "./AddTrip.css";
 
 function AddTrip(props) {
@@ -20,7 +20,7 @@ function AddTrip(props) {
         headers: { Authorization: `Bearer ${storedToken}` },
       })
       .then(() => {
-        setDescription(""); // Resets the state of the form
+        setDescription("");
         navigate(`/events/${eventId}`);
       })
       .catch((error) => console.log(error));
