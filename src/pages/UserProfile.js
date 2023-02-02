@@ -90,7 +90,7 @@ function UserProfile() {
                 </Accordion.Header>
                 <Accordion.Body>
                   {userDetails?.eventsAttending.map((event) => {
-                    console.log(event)
+                    {/* console.log(event) */}
                     return <div className="cardsProfile">{<EventCard />}</div>;
                   })}
                 </Accordion.Body>
@@ -99,9 +99,11 @@ function UserProfile() {
                 <Accordion.Header>Your posts</Accordion.Header>
                 <Accordion.Body>
                   {userDetails?.trips?.map((trip) => {
+                    console.log(userDetails)
+                    console.log(trip)
                     return (
                       <div className="cardsProfile">
-                        <h4>{trip.eventName}</h4>
+                        <h4>{trip.eventName.name}</h4>
                         <p>{trip.description}</p>
                         <h6>Created on {trip.createdAt}</h6>
                       </div>
@@ -113,7 +115,7 @@ function UserProfile() {
                 <Accordion.Header>Your inbox</Accordion.Header>
                 <Accordion.Body>
                   {messages?.map((message) => {
-                    console.log("this is my message",message)
+                    {/* console.log("this is my message",message) */}
                     if (userId === message.recipient) {
                       return (
                         <div className="cardsProfile">

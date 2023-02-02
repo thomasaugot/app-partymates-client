@@ -6,8 +6,12 @@ import dayjs from "dayjs";
 import MessageForm from "../components/MessageForm";
 
 function TripCard(props) {
+
   const { tripId, eventId } = useParams();
   const { user } = useContext(AuthContext);
+
+  console.log(' my props are: ',props)
+  console.log(props.tripId);
 
   return (
     <div className="tripCardEventDetails">
@@ -16,7 +20,7 @@ function TripCard(props) {
       <p className="tripCardEventDetailsP">{props.tripMessage}</p>
       <p>Posted on {dayjs(props.creationDate).format("MMM D, YYYY h:mm A")}</p>
       {props.creatorId === user?._id && (
-        <Link
+        <Link tripId={props.tripId} eventId={eventId}
           className="editBtn"
           to={`/events/${eventId}/share-your-trip/${props.tripId}/edit`}
         >

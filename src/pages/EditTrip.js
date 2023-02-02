@@ -9,7 +9,8 @@ function EditTrip(props) {
   const { tripId } = useParams();
   const navigate = useNavigate();
   const eventId = props.eventId;
-  console.log(eventId);
+  console.log('this is my tripID', props.tripId);
+  console.log('this is my eventID', props.eventId);
 
   useEffect(() => {
     axios
