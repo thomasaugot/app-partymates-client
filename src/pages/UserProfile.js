@@ -89,10 +89,10 @@ function UserProfile() {
                     return (
                       <div className="cardsProfile">
                         {" "}
-                        <img src={event.image} alt="festival" />
-                        <h2 className="eventCardTitle">{event.name}</h2>
-                        <h4 className="eventCardInfo">{event.date}</h4>
-                        <h4 className="eventCardInfo">{event.location}</h4>
+                        <img className="eventCardProfileImg" src={event.image} alt="festival" />
+                        <h2 className="eventCardProfileTitle">{event.name}</h2>
+                        <h4 className="eventCardProfileInfo">{event.date}</h4>
+                        <h4 className="eventCardProfileInfo">{event.location}</h4>
                       </div>
                     );
                   })}

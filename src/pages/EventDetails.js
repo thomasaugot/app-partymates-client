@@ -10,7 +10,7 @@ function EventDetails() {
   const { user } = useContext(AuthContext)
   const [event, setEvent] = useState(null);
   const { eventId } = useParams();
-  const [isGoing, setIsGoing] = useState(false)
+  // const [isGoing, setIsGoing] = useState(false)
 
   const getEvent = () => {
     axios
@@ -20,9 +20,9 @@ function EventDetails() {
 
         const going =  eventObj.attendees?.find((e) => e._id === user._id)
     
-        setIsGoing(() => {
-          if (going) return true
-        })
+        // setIsGoing(() => {
+        //   if (going) return true
+        // })
         setEvent(eventObj);
       })
       .catch((error) => console.log(error));
@@ -62,7 +62,7 @@ function EventDetails() {
       </div>
       <div className="secondColumn">
       <div>
-        <AttendeesList event={eventId} eventDetails={event} isGoing={isGoing} />
+        <AttendeesList event={eventId} eventDetails={event} getEvent={getEvent} />
       </div>
         <div>
           <Link

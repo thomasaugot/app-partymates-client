@@ -58,3 +58,16 @@
   border-radius: 5px;
   font-size: 1.2em;
 }
+
+.eventCardProfileImg {
+  width: 80%;
+}
+
+.eventCardProfileTitle {
+  font-size: 2vw;
+  margin-top: 1vh;
+}
+
+.eventCardProfileInfo {
+  font-size: 1.5vw;
+}

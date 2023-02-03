@@ -1,13 +1,12 @@
 import axios from "axios";
 import { useContext, useEffect, useState } from "react";
-import { Link, Navigate } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 import { AuthContext } from "../context/auth.context";
 
-function AttendeesList({ event, eventDetails, isGoing }) {
+function AttendeesList({ event, eventDetails, getEvent }) {
   const { user } = useContext(AuthContext);
   const token = localStorage.getItem("authToken");
-
-console.log(isGoing);
+  const [isGoing, setIsGoing] = useState(false);
 
   const addAttendee = () => {
     if (!user) {
@@ -22,20 +21,17 @@ console.log(isGoing);
         { headers: { Authorization: `Bearer ${token}` } }
       )
       .then((response) => {
-        return axios.put(`${process.env.REACT_APP_SERVER_URL}/auth/profile/${user._id}/favorites/${event}`,
+        return axios.put(
+          `${process.env.REACT_APP_SERVER_URL}/auth/profile/${user._id}/favorites/${event}`,
           null,
           { headers: { Authorization: `Bearer ${token}` } }
-        )
+        );
       })
       .then((response) => {
         console.log(response.data);
+        getEvent();
       })
       .catch((error) => console.log("error adding USER to EVENT"));
-  };
-
-
-  const goingToEvent = () => {
-    eventDetails.attendees.includes(user._id);
   };
 
   const attendeesListText = () => {
@@ -51,6 +47,14 @@ console.log(isGoing);
   useEffect(() => {
     attendeesListText();
   }, []);
+
+  useEffect(() => {
+    const going = eventDetails?.attendees?.find((e) => e._id === user._id);
+
+    setIsGoing(() => {
+      if (going) return true;
+    });
+  }, [eventDetails]);
 
   return (
     <div className="buttonsGoPost">
@@ -77,9 +81,7 @@ console.log(isGoing);
       <h4 className="eventDetailsH4">
         {eventDetails &&
           eventDetails?.attendees?.map((user) => {
-            return (
-                <>{user.name} </>
-            );
+            return <>{user.name} </>;
           })}
         {attendeesListText()}
       </h4>
