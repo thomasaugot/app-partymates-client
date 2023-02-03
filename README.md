@@ -1,70 +1,36 @@
-# Getting Started with Create React App
+# Partymates | Full stack MERN application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![app logo screenshot](/public/images/partymates-logo.PNG)
 
-## Available Scripts
+NB: this repository only shows the FRONT-END part of the project, for the back-end code, please go to: https://github.com/thomasaugot/app-partymates-server
 
-In the project directory, you can run:
+I developed this application as my third and last project during a full stack web development program at Ironhack.
+The application uses all MERN stack technologies:
+- Front-End: HTML, CSS, Bootstrap, React
+- Back-End: Express, Node.js, MongoDB
+The app is interacting with a REST API that I builded.
+
+## What is the app about?
+
+The application is a social media platform that connects users looking for party mates. Users are able to:
+- Sign up, log in, log out
+- Browse available events
+- Indicate that they will be attending specific events.
+- Post publicly and interact with other users through private messaging.
+
+## Instructions to run this app in your computer
+
+### Install dependencies
+
+### `npm install`
+
+For the front-end, you will need to add the following environment variable to the .env file:
+- REACT_APP_SERVER_URL (example REACT_APP_SERVER_URL=http://localhost:5005)
+
+### Run the application
 
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Demo
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+you can check the deployed project at https://partymates.netlify.app
