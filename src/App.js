@@ -34,7 +34,14 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/events" element={<AllEvents />} />
         <Route path="/events/create" element={<AddEvent />} />
-        <Route path="/events/:eventId" element={<EventDetails />} />
+        <Route
+          path="/events/:eventId"
+          element={
+            <IsPrivate>
+              <EventDetails />
+            </IsPrivate>
+          }
+        />
         <Route
           path="/signup"
           element={
