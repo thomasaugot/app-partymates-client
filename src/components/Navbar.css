@@ -13,6 +13,11 @@
 .Navbar {
   color: white;
   padding: 0 30vw;
+  transition: transform 1s ease-out;
+}
+
+.Navbar:active {
+  color: white;
 }
 
 .container {
@@ -31,4 +36,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .navbarButton {
+        font-size: 4vw;
+    }
+
+    .Navbar {
+      display: flex;
+      align-items: center;
+    }
 }

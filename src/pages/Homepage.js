@@ -12,28 +12,29 @@ function HomePage(props) {
       </div>
 
       <h2 className="FtTitle">Featured events</h2>
+      <div className="videosSection">
+        <iframe
+          className="videos"
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/0t2tPqDge14?autoplay=1&mute=1&controls=0&loop=1"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+        ></iframe>
 
-      <iframe
-        className="videos"
-        width="560"
-        height="315"
-        src="https://www.youtube.com/embed/0t2tPqDge14?autoplay=1&mute=1&controls=0&loop=1"
-        title="YouTube video player"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowfullscreen
-      ></iframe>
-
-      <iframe
-        className="videos"
-        width="560"
-        height="315"
-        src="https://www.youtube.com/embed/RFIKvmp-8Qg?autoplay=1&mute=1&controls=0&loop=1"
-        title="YouTube video player"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowfullscreen
-      ></iframe>
+        <iframe
+          className="videos"
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/RFIKvmp-8Qg?autoplay=1&mute=1&controls=0&loop=1"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+        ></iframe>
+      </div>
 
       <p className="parag">
         For those who love to party.<br></br>

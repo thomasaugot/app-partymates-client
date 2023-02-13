@@ -8,13 +8,29 @@
   overflow-x: hidden;
 }
 
-.logo {
-  width: 30vw;
-  margin: 20px 0 0 34%;
+.logoSection {
+  display: flex;
+  justify-content: center;
 }
 
 .svg {
   width: 100vw;
   height: auto;
   margin: 0;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .logo {
+    width: 70vw;
+    margin: 0;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
 }

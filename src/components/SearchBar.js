@@ -9,7 +9,6 @@ function SearchBar(props) {
     let result = eventObj.name
       .toLowerCase()
       .includes(searchValue.toLowerCase());
-    return result;
   });
 
   const clearSearchInput = () => {
@@ -20,7 +19,7 @@ function SearchBar(props) {
     
     <div class="wrap">
       <div class="search">
-        <input type="text" class="searchTerme" placeholder="Search an event" />
+        {/* <SearchInputText type="text" class="searchTerme" placeholder="Search an event" /> */}
         <button
           type="submit"
           class="searchButton"

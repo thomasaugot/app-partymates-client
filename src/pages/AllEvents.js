@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import EventCard from "../components/EventCard";
 import "./AllEvents.css";
-// import SearchBar from "../components/SearchBar";
+import SearchBar from "../components/SearchBar";
 // import AddEvent from "./AddEvent";
 // import { Link } from "react-router-dom";
 
@@ -22,9 +22,9 @@ function AllEvents() {
 
   return (
     <div>
-      {/* <div>
-        <SearchBar events={events}/>
-      </div> */}
+      <div>
+        {/* <SearchBar events={events}/> */}
+      </div>
       {/* <div className="addEventLink">
         <h5 className="addEventLink">Can't find an event you are looking for?</h5>
         <Link className="addEventLinkBtn" to="/events/create">Add it here</Link>

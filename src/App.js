@@ -16,11 +16,12 @@ import Footer from "./components/Footer";
 import UserProfile from "./pages/UserProfile";
 import MessageForm from "./components/MessageForm";
 import ReplyForm from "./components/ReplyForm";
+import MyNavbar from "./components/Navbar";
 
 function App() {
   return (
     <div className="App">
-      <div>
+      <div className="logoSection">
         <a href="/">
           <img className="logo" src="/images/logo.jpg" alt="logo" />
         </a>
@@ -29,7 +30,7 @@ function App() {
         <img className="svg" src="/images/svg.png" alt="svg"></img>
       </div>
 
-      <Navbar />
+      <MyNavbar />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/events" element={<AllEvents />} />

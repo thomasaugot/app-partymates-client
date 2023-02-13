@@ -1,9 +1,8 @@
 import axios from "axios";
+import { AuthContext } from "../context/auth.context";
 
 const api = axios.create({
-  // make sure you use PORT = 5005 (the port where our server is running)
-  baseURL: process.env.REACT_APP_SERVER_URL,
-  // withCredentials: true // => you might need this option if using cookies and sessions
+  baseURL: "http://localhost:5005/api",
 });
 
 const errorHandler = (err) => {
@@ -12,7 +11,7 @@ const errorHandler = (err) => {
 
 const uploadImage = (file) => {
   return api
-    .post("/api/upload", file)
+    .post(`/users/upload`, file)
     .then((res) => res.data)
     .catch(errorHandler);
 };

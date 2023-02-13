@@ -1,21 +1,17 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import EventCard from "../components/EventCard";
-import TripCard from "../components/TripCard";
-import service from "../api/service";
 import "../pages/userProfile.css";
 import { Accordion } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import dayjs from "dayjs";
 import ReplyForm from "../components/ReplyForm";
+import ProfilePicture from "../components/ProfilePicture";
 
 function UserProfile() {
   const [userDetails, setUserDetails] = useState(null);
   const [messages, setMessages] = useState([]);
   const { userId } = useParams();
-  const [profilePicture, setProfilePicture] = useState("");
-  const [isUploadingImage, setIsUploadingImage] = useState(false);
   const token = localStorage.getItem("authToken");
 
   const getUser = () => {
@@ -25,7 +21,6 @@ function UserProfile() {
       })
       .then((response) => {
         const userDetails = response.data;
-        console.log(userDetails);
         setUserDetails(userDetails);
       })
       .catch((error) => console.log(error));
@@ -42,24 +37,6 @@ function UserProfile() {
       .catch((error) => console.log(error));
   };
 
-  // File upload for pofile picture
-  const handleFileUpload = (e) => {
-    const uploadData = new FormData();
-    uploadData.append("image", e.target.files[0]);
-
-    setIsUploadingImage(true);
-
-    service
-      .uploadImage(uploadData)
-      .then((response) => {
-        setProfilePicture(response.fileUrl);
-      })
-      .catch((err) => console.log("Error while uploading the file: ", err))
-      .finally(() => {
-        setIsUploadingImage(false);
-      });
-  };
-
   useEffect(() => {
     getUser();
     getMessages();
@@ -70,12 +47,8 @@ function UserProfile() {
       {userDetails && (
         <>
           <div className="profileHeader">
-            {/* <input
-              type="file"
-              onChange={(e) => handleFileUpload(e)}
-              style={{ borderRadius: "10px", padding: "10px 20px" }}
-            />
-            <img src={userDetails.profilePicture} alt="profile" width="50" /> */}
+          <ProfilePicture />
+            <img src={userDetails.imageUrl} alt="profilePicture" onError = {"https://cdn.vectorstock.com/i/preview-1x/32/12/default-avatar-profile-icon-vector-39013212.jpg"} width="50" />
             <h2>Welcome, {userDetails?.name} !</h2>
           </div>
           <div>
@@ -89,10 +62,16 @@ function UserProfile() {
                     return (
                       <div className="cardsProfile">
                         {" "}
-                        <img className="eventCardProfileImg" src={event.image} alt="festival" />
+                        <img
+                          className="eventCardProfileImg"
+                          src={event.image}
+                          alt="festival"
+                        />
                         <h2 className="eventCardProfileTitle">{event.name}</h2>
                         <h4 className="eventCardProfileInfo">{event.date}</h4>
-                        <h4 className="eventCardProfileInfo">{event.location}</h4>
+                        <h4 className="eventCardProfileInfo">
+                          {event.location}
+                        </h4>
                       </div>
                     );
                   })}

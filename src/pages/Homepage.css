@@ -1,17 +1,5 @@
 .Homepage {
-  align-items: center;
   width: 100vw;
-}
-
-.slide-effect {
-  overflow: hidden;
-  width: 100%;
-  height: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 5% 0;
-
 }
 
 div.slide-effect {
@@ -79,6 +67,8 @@ div.slide-effect {
 
 .videos {
   margin: 0 4% 4% 4%;
+  max-width: 85vw;
+  text-align: center;
 }
 
 .FtTitle {
@@ -100,4 +90,45 @@ div.slide-effect {
 
 .parag {
   margin: 0 0 0 50px;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .videosSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .slide-effect {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .Homepage {
+    display: flex;
+    align-items: center;
+  }
+
+  .slide-effect {
+    display: flex;
+    flex-direction: column;
+    max-height: fit-content;
+    align-items: center;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  
+.slide-effect {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5% 0;
+}
 }
