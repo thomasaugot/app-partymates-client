@@ -3,7 +3,6 @@
     border: solid white 1px;
     max-width: 27%;
     margin: 2%;
-    padding: 0 10px 20px 10px;
     border-radius: 5px;
     text-align: center;
     text-decoration: none;
@@ -38,15 +37,36 @@
 @media only screen and (max-width: 600px) {
   .EventCard {
     border: solid white 1px;
-    max-width: 70%;
-    margin: 2% 0 2% 11%;
-    padding: 0 10px 20px 10px;
+    max-width: 80%;
+    height: auto;
+    margin: 2% ;
     border-radius: 5px;
     text-align: center;
+    color: white;
+  }
+
+  .EventCard:hover {
+    border: 1px solid rgb(0, 191, 255);
+    box-shadow: 5px 5px 10px -5px;
+    color: rgb(0, 191, 255);
+    transition: 0.4s;
+    cursor: pointer;
+  }
+
+  .eventCardTitle {
+    color: white;
+    text-decoration: none;
+    margin: 5% 0;
+  }
+
+  .eventCardInfo {
+    color: white;
+    text-decoration: none;
+    font-size: smaller;
   }
 
   .EventCard img {
     max-width: 100%;
-    margin: 2% 0;
+    border-radius: 5px;
   }
 }

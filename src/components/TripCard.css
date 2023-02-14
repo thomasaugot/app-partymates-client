@@ -1,55 +1,78 @@
 .tripCardEventDetails {
   border: solid white 0.5px;
- width: 28vw;
-  margin: 4% 0 0 0;
-  padding: 10%;
   border-radius: 5px;
   text-align: center;
   box-shadow: 5px 5px 10px -5px white;
 }
 
-.tripCardEventDetailsP {
-  font-size: 80%;
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .tripCardEventDetails {
+    width: 80vw;
+    margin: 0 0 0 4%;
+  }
+
+  .tripCardEventDetailsP {
+    font-size: 90%;
+  }
+
+  .editBtn {
+    border: solid transparent 0.5px;
+    margin: 2% 0 10% 0;
+    padding: 3px 20px;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    background-color: rgb(0, 191, 255);
+  }
+
+  .editBtn:hover {
+    border: 1px solid white;
+    box-shadow: 5px 5px 10px -5px white;
+    transition: 0.4s;
+  }
+
+  .tripCardEventDetailsH4 {
+    font-size: 5vw;
+    margin: 6% 0;
+  }
+
+  .sendMessageBtn {
+    border: solid transparent 0.5px;
+    margin: 2% 0 10% 0;
+    padding: 3px 20px;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    background-color: rgb(0, 191, 255);
+  }
+
+  .sendMessageBtn:hover {
+    border: 1px solid white;
+    box-shadow: 3px 3px 8px -3px white;
+  }
+
+  *,
+  ::after,
+  ::before {
+    box-sizing: content-box;
+  }
+
+  .sendMessage {
+    margin: 0 0 5% 0;
+  }
+
+  .backLink {
+    margin: 2vh 42vw;
+  }
 }
 
-.editBtn {
-  border: solid transparent 0.5px;
-  margin: 2% 0 10% 0;
-  padding: 3px 20px;
-  border-radius: 5px;
-  text-align: center;
-  text-decoration: none;
-  color: black;
-  background-color: rgb(0, 191, 255);
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
 }
 
-.editBtn:hover {
-  border: 1px solid white;
-  box-shadow: 5px 5px 10px -5px white;
-  transition: 0.4s;
-}
-
-.tripCardEventDetailsH4 {
-  font-size: 1.3vw;
-  margin-bottom: 6%;
-}
-
-.sendMessageBtn {
-  border: solid transparent 0.5px;
-  margin: 2% 0 10% 0;
-  padding: 3px 20px;
-  border-radius: 5px;
-  text-align: center;
-  text-decoration: none;
-  color: black;
-  background-color: rgb(0, 191, 255);
-}
-
-.sendMessageBtn:hover {
-  border: 1px solid white;
-  box-shadow: 3px 3px 8px -3px white;
-}
-
-*, ::after, ::before {
-  box-sizing: content-box;
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
 }

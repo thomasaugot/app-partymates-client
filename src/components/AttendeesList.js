@@ -73,7 +73,7 @@ function AttendeesList({ event, eventDetails, getEvent }) {
 
       {isGoing && (
         <>
-          <button onClick={addAttendee} className="blueButton">
+          <button onClick={addAttendee} className="btnClicked">
             I'm Going
           </button>
         </>

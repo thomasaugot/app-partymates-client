@@ -1,9 +1,39 @@
-.Footer {
-    margin: 3% 0;
-    text-align: center;
-}
-
-.linkedin {
-    color: white;
-    text-underline-offset: 4px;
-}
+    /* Extra small devices (phones, 600px and down) */
+  @media only screen and (max-width: 600px) {
+    .Footer {
+        margin: 9% 0;
+        text-align: center;
+        padding: 0 6vw;
+    }
+    
+    .linkedin {
+        color: white;
+        text-underline-offset: 4px;
+    }
+  }
+  
+  /* Medium devices (landscape tablets, 768px and up) */
+  @media only screen and (min-width: 768px) {
+    .Footer {
+        margin: 9% 0;
+        text-align: center;
+    }
+    
+    .linkedin {
+        color: white;
+        text-underline-offset: 4px;
+    }
+  }
+  
+  /* Large devices (laptops/desktops, 992px and up) */
+  @media only screen and (min-width: 992px) {
+    .Footer {
+        margin: 4% 0;
+        text-align: center;
+    }
+    
+    .linkedin {
+        color: white;
+        text-underline-offset: 4px;
+    }
+  }

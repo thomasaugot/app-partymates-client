@@ -2,10 +2,6 @@
   width: 100vw;
 }
 
-div.slide-effect {
-  margin: 0;
-}
-
 .text,
 .slideDown,
 .slideUp {
@@ -26,7 +22,6 @@ div.slide-effect {
   left: 5px;
   animation: slideDown ease 0.4s forwards 0.6s;
   color: rgb(0,191,255);
-
   margin-bottom: 4px;
 }
 
@@ -56,18 +51,27 @@ div.slide-effect {
   }
 }
 
+.slide-effect,
+.text,
+.slideDown,
+.slideUp {
+  font-size: 15px;
+}
+
+div.slide-effect {
+  margin: 0;
+}
+
 @media only screen and (max-width: 600px) {
-  .slide-effect,
-  .text,
-  .slideDown,
-  .slideUp {
-    font-size: 15px;
+  div.slide-effect {
+    margin: 0;
   }
 }
 
 .videos {
   margin: 0 4% 4% 4%;
   max-width: 85vw;
+  height: auto;
   text-align: center;
 }
 
@@ -98,12 +102,26 @@ div.slide-effect {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
   }
 
   .slide-effect {
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+
+  .FtTitle {
+    margin: 6%;
+  }
+
+  .parag {
+    margin: 5% 7%;
+  }
+
+  .link {
+    font-size: 18px;
+    margin: 12% 5%;
   }
 }
 
@@ -119,6 +137,20 @@ div.slide-effect {
     flex-direction: column;
     max-height: fit-content;
     align-items: center;
+    margin: 12% 0;
+  }
+
+  .FtTitle {
+    margin: 7%;
+  }
+
+  .videosSection {
+    text-align: center;
+  }
+
+  .link {
+    font-size: 22px;
+    margin: 8% 5%;
   }
 }
 
@@ -127,8 +159,29 @@ div.slide-effect {
   
 .slide-effect {
   display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin: 5% 0;
+}
+
+.text {
+font-size: 22px;
+}
+
+.slideDown {
+font-size: 22px;
+}
+
+.FtTitle {
+  margin: 4% 5%;
+}
+
+.parag {
+  margin: 2% 7%;
+}
+
+.link {
+  font-size: 22px;
+  margin: 6% 3%;
 }
 }

@@ -1,106 +1,127 @@
-.EventDetails {
-  margin: 1vh 0;
-  display: flex;
-  justify-content: center;
-}
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .EventDetails {
+    margin: 1vh 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
 
-.firstColumn {
-  border-right: solid white 1px;
-  padding: 0 8% 0 2%;
-  width: 40vw;
-  text-align: center;
-}
+  .firstColumn {
+    padding: 6%;
+  }
 
-.EventDetailsImg {
-  max-width: 100%;
-}
+  .EventDetailsImg {
+    max-width: 100%;
+  }
 
-.eventDetailsH2 {
-  font-size: 4vw;
-  margin: 2.5vh;
-}
+  .eventDetailsH2 {
+    font-size: 10vw;
+    margin: 2.5vh;
+  }
 
-.eventDetailH4{
-margin: 6%;
-}
+  .eventDetailH4 {
+    margin: 6%;
+  }
 
-.EventDetailsP {
-    margin-bottom: 3vw;
+  .EventDetailsP {
+    margin-bottom: 10vw;
     font-weight: lighter;
-}
+  }
 
-.blueButton {
-  padding: 4% 10%;
-  font-size: 1.2vw;
-  border-radius: 40px;
-  text-decoration: none;
-  color: black;
-  font-weight: bold;
-  background-color: rgb(0, 191, 255);
-  border: solid 1px transparent;
-}
+  .blueButton {
+    padding: 4% 7%;
+    font-size: 4vw;
+    border-radius: 40px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    background-color: rgb(0, 191, 255);
+    border: solid 1px transparent;
+    margin: 0 24%;
+  }
 
-.blueButton:hover {
+  .blueButton:hover {
     border: 1px solid white;
     box-shadow: 3px 3px 8px -3px white;
     color: black;
-} 
+  }
 
-.secondColumn {
-    padding: 5vh 0 0 8vw;
-    width: 40vw;
-}
+  .secondColumn {
+    padding: 0 6%;
+    text-align: center;
+  }
 
-.textRides {
+  .transparentBtn {
+    padding: 4% 10%;
+    font-size: 4vw;
+    border-radius: 40px;
+    text-decoration: none;
+    color: white;
+    background-color: transparent;
+    border: solid 1px white;
+  }
+
+  .btnClicked {
+    padding: 4% 10%;
+    font-size: 4vw;
+    border-radius: 40px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    background-color: rgb(0, 191, 255);
+    border: solid 1px transparent;
+  }
+
+  .textRides {
     margin: 15% 0;
+    font-size: 18px;
+  }
+
+  .offerRideBtn {
+    padding: 4% 10%;
+    font-size: 4vw;
+    border-radius: 40px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    background-color: rgb(0, 191, 255);
+    border: solid 1px transparent;
+  }
+
+  .offerRideBtn:hover {
+    border: 1px solid white;
+    box-shadow: 3px 3px 8px -3px white;
+    color: black;
+  }
+
+  .transparentBtn:hover {
+    border: 1px solid white;
+    box-shadow: 3px 3px 8px -3px white;
+  }
+
+  .backLink {
+    border: none;
+    margin-top: 5vh;
+    text-decoration: underline;
+    text-underline-offset: 8px;
+    background-color: transparent;
+    color: white;
+    font-size: larger;
+    font-weight: lighter;
+  }
+
+  .eventDetailsH4 {
+    text-align: center;
+    margin: 12% 0;
+    font-size: 16px;
+  }
 }
 
-.offerRideBtn {
-  padding: 4% 10%;
-  font-size: 1.2vw;
-  border-radius: 40px;
-  text-decoration: none;
-  color: black;
-  font-weight: bold;
-  background-color: rgb(0, 191, 255);
-  border: solid 1px transparent;
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
 }
 
-.offerRideBtn:hover {
-  border: 1px solid white;
-  box-shadow: 3px 3px 8px -3px white;
-  color: black;
-}
-
-.transparentBtn {
-  padding: 4% 10%;
-  font-size: 1.2vw;
-  border-radius: 40px;
-  text-decoration: none;
-  color: white;
-  font-weight: bold;
-  background-color: transparent;
-  border: solid 1px white;
-  margin-bottom: 2vh;
-}
-
-.transparentBtn:hover {
-  border: 1px solid white;
-  box-shadow: 3px 3px 8px -3px white;
-}
-
-.backLink {
-  border: none;
-  margin-top: 5vh;
-  text-decoration: underline;
-  text-underline-offset: 8px;
-  background-color: transparent;
-  color: white;
-  font-size: larger;
-  font-weight: lighter;
-}
-
-.eventDetailsH4 {
-  margin: 2vh 0 8vh 0;
-  font-size: 1.5vw;
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
 }
