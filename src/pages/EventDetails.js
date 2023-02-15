@@ -33,73 +33,75 @@ function EventDetails() {
   }, []);
 
   return (
-    <div className="EventDetails">
-      <div className="firstColumn">
-        {event && (
-          <>
-            <img
-              src={event?.image}
-              alt="festival"
-              className="EventDetailsImg"
+    <>
+      <div className="EventDetails">
+        <div className="firstColumn">
+          {event && (
+            <>
+              <img
+                src={event?.image}
+                alt="festival"
+                className="EventDetailsImg"
+              />
+              <h2 className="eventDetailsH2">{event?.name}</h2>
+              <h4 className="eventDetailH4">Date: {event?.date}</h4>
+              <h4 className="eventDetailH4">Location: {event?.location}</h4>
+              <p className="EventDetailsP">{event?.description}</p>
+              <h4>
+                <a
+                  className="blueButton"
+                  target="_blank"
+                  rel="noreferrer"
+                  href={event?.linkToTickets}
+                >
+                  Get your tickets
+                </a>
+              </h4>
+            </>
+          )}
+        </div>
+        <div className="secondColumn">
+          <div>
+            <AttendeesList
+              event={eventId}
+              eventDetails={event}
+              getEvent={getEvent}
             />
-            <h2 className="eventDetailsH2">{event?.name}</h2>
-            <h4 className="eventDetailH4">Date: {event?.date}</h4>
-            <h4 className="eventDetailH4">Location: {event?.location}</h4>
-            <p className="EventDetailsP">{event?.description}</p>
-            <h4>
-              <a
-                className="blueButton"
-                target="_blank"
-                rel="noreferrer"
-                href={event?.linkToTickets}
-              >
-                Get your tickets
-              </a>
-            </h4>
-          </>
-        )}
-      </div>
-      <div className="secondColumn">
-        <div>
-          <AttendeesList
-            event={eventId}
-            eventDetails={event}
-            getEvent={getEvent}
-          />
-        </div>
-        <div>
-          <Link
-            className="offerRideBtn"
-            to={`/events/${eventId}/share-your-trip`}
-          >
-            Offer a Ride
-          </Link>
-        </div>
-        <h4 className="textRides">They might be looking for you:</h4>
-        <div>
-          {event &&
-            event?.tripsOrganized?.map((trip) => {
-              return (
-                <div className="tripCard">
-                  <TripCard
-                    creationDate={trip?.createdAt}
-                    tripId={trip?._id}
-                    creatorName={trip?.creator?.name}
-                    creatorId={trip?.creator?._id}
-                    tripMessage={trip?.description}
-                    key={trip?._id}
-                  />
-                </div>
-              );
-            })}
+          </div>
+          <div>
+            <Link
+              className="offerRideBtn"
+              to={`/events/${eventId}/share-your-trip`}
+            >
+              Offer a Ride
+            </Link>
+          </div>
+          <h4 className="textRides">They might be looking for you:</h4>
+          <div>
+            {event &&
+              event?.tripsOrganized?.map((trip) => {
+                return (
+                  <div className="tripCard">
+                    <TripCard
+                      creationDate={trip?.createdAt}
+                      tripId={trip?._id}
+                      creatorName={trip?.creator?.name}
+                      creatorId={trip?.creator?._id}
+                      tripMessage={trip?.description}
+                      key={trip?._id}
+                    />
+                  </div>
+                );
+              })}
+          </div>
         </div>
       </div>
-      <div>
+      <div className="backDiv">
         <Link to="/events">
           <button className="backLink">Back</button>
         </Link>
       </div>
-    </div>
+    </>
   );
 }
 

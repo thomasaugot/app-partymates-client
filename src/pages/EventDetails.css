@@ -158,15 +158,69 @@
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
+  .EventDetails {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .firstColumn {
+    max-width: 45vw;
+  }
+
+  .EventDetailsImg {
+    width: 80%;
+  }
+
+  .eventDetailsH2 {
+    font-size: 3vw;
+    margin: 5% 0 3% 0
+  }
+
+  .eventDetailH4 {
+    font-size: 1.5vw;
+    margin-top: 5%;
+  }
+
+  .EventDetailsP {
+    font-size: 1em;
+    margin-bottom: 15%;
+  }
+
   .blueButton {
-    font-size: 2vw;
+    padding: 2% 5%;
+    font-size: 1em;
+    margin: 0 24%;
+  }
+
+  .secondColumn {
+    width: 45vw;
   }
 
   .transparentBtn {
-    font-size: 1vw;
+    padding: 2% 5%;
+    font-size: 1em;
+  }
+  
+  .btnClicked {
+    padding: 2% 5%;
+    font-size: 1em;
   }
 
-  .btnClicked {
-    font-size: 2vw;
+  .eventDetailsH4 {
+    font-size: 1.5em;
+  }
+
+  .textRides {
+    font-size: 1.5em;
+  }
+
+  .offerRideBtn {
+    padding: 2% 5%;
+    font-size: 1em;
+  }
+
+  .backDiv {
+    text-align: center;
   }
 }

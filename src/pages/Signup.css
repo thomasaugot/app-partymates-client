@@ -25,3 +25,10 @@
     box-shadow: inset 8px 8px 29px #939b9e,
                 inset -8px -8px 29px #fbffff;
 }
+
+  /* Large devices (laptops/desktops, 992px and up) */
+  @media only screen and (min-width: 992px) {
+    .SignupPage {
+      width: 40vw;
+  }
+  }

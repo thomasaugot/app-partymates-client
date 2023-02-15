@@ -16,11 +16,11 @@
 
 .accordion-body {
   background-color: #25262d;
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	align-items: center;
-	align-content: space-between;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: space-between;
 }
 
 .accordionHeader {
@@ -70,4 +70,11 @@
 
 .eventCardProfileInfo {
   font-size: 1.5vw;
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .accordion {
+    margin: 5% 0 80% 0;
+  }
 }

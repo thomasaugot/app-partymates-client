@@ -3,38 +3,3 @@
     flex-wrap: wrap;
     justify-content: center;
   }
-
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {
-  
-  .addEventLink {
-    text-align: center;
-    margin-bottom: 2%;
-  }
-  
-  .addEventLinkBtn {
-    text-align: center;
-    color: white;
-    text-underline-offset: 8px;
-  }
-}
-
-/* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {
-  .AllEvents {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  
-  .addEventLink {
-    text-align: center;
-    margin-bottom: 2%;
-  }
-  
-  .addEventLinkBtn {
-    text-align: center;
-    color: white;
-    text-underline-offset: 8px;
-  }
-}

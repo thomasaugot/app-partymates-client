@@ -1,7 +1,7 @@
 .AddTripPage {
   font-size: 3vw;
   width: 60vw;
-  margin: 0 20%;
+  margin: 0 20% 53% 20%;
 }
 
 .addForm {
@@ -49,4 +49,19 @@
 
 .textarea {
   font-size: 18px;
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .addTitle {
+    font-size: 2vw;
+  }
+
+  .borderForm {
+    padding: 6px 6px 0 6px;
+  }
+
+  .addBtn {
+    font-size: 1.5vw;
+  }
 }
