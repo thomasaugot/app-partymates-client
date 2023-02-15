@@ -80,7 +80,7 @@ function EventDetails() {
           {event &&
             event?.tripsOrganized?.map((trip) => {
               return (
-                <div>
+                <div className="tripCard">
                   <TripCard
                     creationDate={trip?.createdAt}
                     tripId={trip?._id}

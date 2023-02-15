@@ -47,8 +47,8 @@ function UserProfile() {
       {userDetails && (
         <>
           <div className="profileHeader">
-          <ProfilePicture />
-            <img src={userDetails.imageUrl} alt="profilePicture" onError = {"https://cdn.vectorstock.com/i/preview-1x/32/12/default-avatar-profile-icon-vector-39013212.jpg"} width="50" />
+          {/* <ProfilePicture /> */}
+            {/* <img src={userDetails.imageUrl} alt="profilePicture" onError = {"https://cdn.vectorstock.com/i/preview-1x/32/12/default-avatar-profile-icon-vector-39013212.jpg"} width="50" /> */}
             <h2>Welcome, {userDetails?.name} !</h2>
           </div>
           <div>

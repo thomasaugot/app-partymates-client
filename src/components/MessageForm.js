@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../context/auth.context";
+import "../components/TripCard.css";
 
 function MessageForm(props) {
   const [content, setContent] = useState("");
@@ -33,7 +34,7 @@ function MessageForm(props) {
   }, []);
 
   return (
-    <div>
+    <div className="messageForm">
       <form className="sendMessage" onSubmit={handleSubmit}>
         <label className="msgTitle">Write a message</label>
         <div className="borderForm">

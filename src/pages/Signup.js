@@ -34,41 +34,42 @@ function Signup(props) {
   };
 
   return (
-    <div className="SignupPage">
-      <h3>Not a member yet? Sign Up!</h3>
+    <div className="fullLoginPage">
+      <div className="SignupPage">
+        <h3>Not a member yet? Sign Up!</h3>
 
-      <form onSubmit={handleSignupSubmit}>
-        <label>Email:</label>
-        <input
-          type="email"
-          name="email"
-          value={email}
-          onChange={handleEmail}
-        />
+        <form onSubmit={handleSignupSubmit}>
+          <label>Email:</label>
+          <input
+            type="email"
+            name="email"
+            value={email}
+            onChange={handleEmail}
+          />
 
-        <label>Password:</label>
-        <input
-          type="password"
-          name="password"
-          value={password}
-          onChange={handlePassword}
-        />
+          <label>Password:</label>
+          <input
+            type="password"
+            name="password"
+            value={password}
+            onChange={handlePassword}
+          />
 
-        <label>Username:</label>
-        <input
-          type="text"
-          name="name"
-          value={name}
-          onChange={handleName}
-        />
+          <label>Username:</label>
+          <input type="text" name="name" value={name} onChange={handleName} />
 
-        <button className="signupLoginBtn" type="submit">Sign Up</button>
-      </form>
+          <button className="signupLoginBtn" type="submit">
+            Sign Up
+          </button>
+        </form>
 
-      {errorMessage && <p className="error-message">{errorMessage}</p>}
+        {errorMessage && <p className="error-message">{errorMessage}</p>}
 
-      <p>Already have account?</p>
-      <Link className="signupLoginLink" to={"/login"}>Login</Link>
+        <p>Already have account?</p>
+        <Link className="signupLoginLink" to={"/login"}>
+          Login
+        </Link>
+      </div>
     </div>
   );
 }

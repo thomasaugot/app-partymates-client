@@ -1,5 +1,171 @@
-/* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
+.EventDetails {
+  margin: 1vh 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.firstColumn {
+  padding: 6%;
+}
+
+.EventDetailsImg {
+  max-width: 100%;
+}
+
+.eventDetailsH2 {
+  font-size: 10vw;
+  margin: 2.5vh;
+}
+
+.eventDetailH4 {
+  margin: 6%;
+  font-size: 1.5em;
+}
+
+.EventDetailsP {
+  margin-bottom: 10vw;
+  font-weight: lighter;
+  font-size: 1em;
+}
+
+.blueButton {
+  padding: 4% 7%;
+  font-size: 4vw;
+  border-radius: 40px;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  background-color: rgb(0, 191, 255);
+  border: solid 1px transparent;
+  margin: 0 24%;
+}
+
+.blueButton:hover {
+  border: 1px solid white;
+  box-shadow: 3px 3px 8px -3px white;
+  color: black;
+}
+
+.secondColumn {
+  padding: 0 6%;
+  text-align: center;
+}
+
+.transparentBtn {
+  padding: 4% 10%;
+  font-size: 4vw;
+  border-radius: 40px;
+  text-decoration: none;
+  color: white;
+  background-color: transparent;
+  border: solid 1px white;
+}
+
+.btnClicked {
+  padding: 4% 10%;
+  font-size: 4vw;
+  border-radius: 40px;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  background-color: rgb(0, 191, 255);
+  border: solid 1px transparent;
+}
+
+.textRides {
+  margin: 15% 0;
+  font-size: 1.5em;
+}
+
+.offerRideBtn {
+  padding: 4% 10%;
+  font-size: 4vw;
+  border-radius: 40px;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  background-color: rgb(0, 191, 255);
+  border: solid 1px transparent;
+}
+
+.offerRideBtn:hover {
+  border: 1px solid white;
+  box-shadow: 3px 3px 8px -3px white;
+  color: black;
+}
+
+.transparentBtn:hover {
+  border: 1px solid white;
+  box-shadow: 3px 3px 8px -3px white;
+}
+
+.backLink {
+  border: none;
+  margin-top: 5vh;
+  text-decoration: underline;
+  text-underline-offset: 8px;
+  background-color: transparent;
+  color: white;
+  font-size: larger;
+  font-weight: lighter;
+}
+
+.eventDetailsH4 {
+  text-align: center;
+  margin: 12% 0;
+  font-size: 16px;
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .firstColumn {
+    padding: 0;
+    text-align: center;
+  }
+
+  .secondColumn {
+    padding: 0;
+    text-align: center;
+  }
+
+  .textRides {
+    margin: 15% 0;
+    font-size: 20px;
+  }
+
+  .offerRideBtn {
+    padding: 4% 10%;
+    font-size: 1em;
+    border-radius: 40px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    background-color: rgb(0, 191, 255);
+    border: solid 1px transparent;
+  }
+
+  .offerRideBtn:hover {
+    border: 1px solid white;
+    box-shadow: 3px 3px 8px -3px white;
+    color: black;
+  }
+
+  .transparentBtn:hover {
+    border: 1px solid white;
+    box-shadow: 3px 3px 8px -3px white;
+  }
+
+  .backLink {
+    margin-left: 46%;
+  }
+
+  .eventDetailsH4 {
+    text-align: center;
+    margin: 12% 0;
+    font-size: 16px;
+  }
+
   .EventDetails {
     margin: 1vh 0;
     display: flex;
@@ -31,7 +197,7 @@
 
   .blueButton {
     padding: 4% 7%;
-    font-size: 4vw;
+    font-size: 2.5vw;
     border-radius: 40px;
     text-decoration: none;
     color: black;
@@ -54,7 +220,7 @@
 
   .transparentBtn {
     padding: 4% 10%;
-    font-size: 4vw;
+    font-size: 2.5vw;
     border-radius: 40px;
     text-decoration: none;
     color: white;
@@ -64,7 +230,7 @@
 
   .btnClicked {
     padding: 4% 10%;
-    font-size: 4vw;
+    font-size: 2.5vw;
     border-radius: 40px;
     text-decoration: none;
     color: black;
@@ -80,7 +246,7 @@
 
   .offerRideBtn {
     padding: 4% 10%;
-    font-size: 4vw;
+    font-size: 2.5vw;
     border-radius: 40px;
     text-decoration: none;
     color: black;
@@ -118,10 +284,17 @@
   }
 }
 
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {
-}
-
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
+  .blueButton {
+    font-size: 2vw;
+  }
+
+  .transparentBtn {
+    font-size: 1vw;
+  }
+
+  .btnClicked {
+    font-size: 2vw;
+  }
 }

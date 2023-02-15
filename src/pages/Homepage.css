@@ -21,7 +21,7 @@
   top: -40px;
   left: 5px;
   animation: slideDown ease 0.4s forwards 0.6s;
-  color: rgb(0,191,255);
+  color: rgb(0, 191, 255);
   margin-bottom: 4px;
 }
 
@@ -62,38 +62,16 @@ div.slide-effect {
   margin: 0;
 }
 
-@media only screen and (max-width: 600px) {
-  div.slide-effect {
-    margin: 0;
-  }
-}
-
-.videos {
-  margin: 0 4% 4% 4%;
-  max-width: 85vw;
-  height: auto;
-  text-align: center;
-}
-
-.FtTitle {
-  margin: 4% 0 2% 8%;
-  font-weight: lighter;
+.parag {
+  margin: 5% 7%;
 }
 
 .link {
-  margin: 4% 0 2% 8%;
-  color: white;
-  font-size: 1.5vw;
+  font-size: 16px;
   text-decoration: underline;
+  margin: 12% 7%;
+  color: white;
   text-underline-offset: 8px;
-}
-
-.link:hover {
-  color: rgb(0,191,255);
-}
-
-.parag {
-  margin: 0 0 0 50px;
 }
 
 /* Extra small devices (phones, 600px and down) */
@@ -105,6 +83,13 @@ div.slide-effect {
     align-items: center;
   }
 
+  .videos {
+    margin: 0 4% 4% 4%;
+    max-width: 85vw;
+    height: auto;
+    text-align: center;
+  }
+
   .slide-effect {
     display: flex;
     flex-direction: column;
@@ -113,15 +98,6 @@ div.slide-effect {
 
   .FtTitle {
     margin: 6%;
-  }
-
-  .parag {
-    margin: 5% 7%;
-  }
-
-  .link {
-    font-size: 18px;
-    margin: 12% 5%;
   }
 }
 
@@ -140,12 +116,22 @@ div.slide-effect {
     margin: 12% 0;
   }
 
+  .text,
+  .slideDown,
+  .slideUp {
+    font-size: 32px;
+  }
+
   .FtTitle {
     margin: 7%;
   }
 
   .videosSection {
     text-align: center;
+  }
+
+  .videos {
+    margin: 2% 0;
   }
 
   .link {
@@ -156,32 +142,28 @@ div.slide-effect {
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
-  
-.slide-effect {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-}
+ 
+  .text,
+  .slideDown,
+  .slideUp {
+    font-size: 22px;
+  }
 
-.text {
-font-size: 22px;
-}
+  .FtTitle {
+    font-size: 1.5em;
+    margin: 3% 0 2% 9%;
+  }
 
-.slideDown {
-font-size: 22px;
-}
+  .videosSection {
+    text-align: center;
+  }
 
-.FtTitle {
-  margin: 4% 5%;
-}
+  .videos {
+    margin: 0 2%;
+  }
 
-.parag {
-  margin: 2% 7%;
-}
-
-.link {
-  font-size: 22px;
-  margin: 6% 3%;
-}
+  .link {
+    font-size: 20px;
+    margin: 6% 5%;
+  }
 }
