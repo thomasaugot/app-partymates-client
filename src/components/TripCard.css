@@ -1,3 +1,9 @@
+.tripcardPage {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 .sendMessage {
   max-width: 80%;
   margin-bottom: 8%;
@@ -72,4 +78,17 @@
 
 .backLink {
   margin: 2vh 42vw;
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+
+  .tripCardEventDetails {
+    border: solid white 0.5px;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 5px 5px 10px -5px white;
+    width: 40vw;
+    margin: 0 0 0 4%;
+  }
 }

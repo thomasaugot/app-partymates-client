@@ -5,7 +5,7 @@
   border: none;
   background-color: transparent;
   color: white;
-  font-size: 2vw;
+  font-size: 3vw;
   text-decoration: underline;
   text-underline-offset: 8px;
 }
@@ -37,23 +37,4 @@
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-/* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
-    .navbarButton {
-        font-size: 4vw;
-    }
-
-    .Navbar {
-      display: flex;
-      align-items: center;
-    }
-}
-
-/* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {
-  .navbarButton {
-    font-size: 20px;
-}
 }
