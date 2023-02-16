@@ -5,7 +5,7 @@
 NB: this repository only shows the FRONT-END part of the project, for the back-end code, please go to: https://github.com/thomasaugot/app-partymates-server
 
 I developed this application as my third and last project during a full stack web development program at Ironhack.
-The application uses all MERN stack technologies:
+The application uses all MERN stack technologies & is fully responsive, following the mobile first approach:
 - Front-End: HTML, CSS, Bootstrap, React
 - Back-End: Express, Node.js, MongoDB
 The app is interacting with a REST API that I builded.
@@ -19,6 +19,11 @@ The application is a social media platform that connects users looking for party
 - Post publicly and interact with other users through private messaging.
 
 ## Instructions to run this app in your computer
+
+If you wish to try and use all of the app features without having to bother signing up, you may use the test account I created for that purpose:
+- Username: User Test
+- Email: test@test.com
+- Password: Test1234!
 
 ### Install dependencies
 
