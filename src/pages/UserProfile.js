@@ -104,12 +104,12 @@ function UserProfile() {
                     console.log("this is the message from profile", message);
                     if (userId === message.recipient) {
                       return (
-                        <div className="cardsProfile">
+                        <div className="inboxCard">
                           From{" "}
-                          <h4 className="cardsProfileH4">
+                          <h4 className="inboxCardH4">
                             {message.creator.name}
                           </h4>
-                          <p className="cardsProfileP">{message.content}</p>
+                          <p className="inboxCardP">{message.content}</p>
                           <ReplyForm recipient={message.creator} />
                         </div>
                       );

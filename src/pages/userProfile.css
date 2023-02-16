@@ -8,7 +8,7 @@
 }
 
 .cardsProfile {
-  max-width: 25vw;
+  max-width: 30vw;
   font-size: smaller;
   color: white;
   margin: 2%;
@@ -33,7 +33,7 @@
 
 .cardsProfile {
   border: solid white 1px;
-  max-width: 30%;
+  width: 50vw;
   margin: 2%;
   padding: 2%;
   border-radius: 5px;
@@ -43,33 +43,58 @@
 }
 
 .cardsProfileH4 {
-  font-size: 170%;
+  font-size: 3vw;
   font-weight: bolder;
 }
 
 .cardsProfileH6 {
-  font-size: small;
+  font-size: 3vw;
 }
 
 .cardsProfileP {
   border: solid rgb(0, 191, 255) 1px;
   padding: 4%;
-  margin: 6% 0;
+  margin: 6% 12%;
   border-radius: 5px;
-  font-size: 1.2em;
+  font-size: 3vw;
+  width: fit-content;
+}
+
+.borderFormProfile {
+  width: 90%;
 }
 
 .eventCardProfileImg {
-  width: 80%;
+  width: 100%;
 }
 
 .eventCardProfileTitle {
-  font-size: 2vw;
+  font-size: 3vw;
   margin-top: 1vh;
 }
 
 .eventCardProfileInfo {
-  font-size: 1.5vw;
+  font-size: 2vw;
+}
+
+.inboxCard {
+border: solid white 1px;
+width: fit-content;
+margin: 2%;
+padding: 2%;
+border-radius: 5px;
+text-align: center;
+color: white;
+box-shadow: 5px 5px 10px -5px white;
+}
+
+.inboxCardH4 {
+  font-size: 3vw;
+  color: white;
+}
+
+.sendMessageCard {
+padding-left: 13%;
 }
 
 /* Large devices (laptops/desktops, 992px and up) */

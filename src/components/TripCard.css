@@ -20,16 +20,16 @@
   text-align: center;
   box-shadow: 5px 5px 10px -5px white;
   width: 80vw;
-  margin: 0 0 0 4%;
+  margin: 10% 0 3% 4%;
 }
 
 .tripCardEventDetailsP {
-  font-size: 90%;
+  font-size: 3vw;
 }
 
 .editBtn {
   border: solid transparent 0.5px;
-  margin: 2% 0 10% 0;
+  margin: 2% 0 20% 0;
   padding: 3px 20px;
   border-radius: 5px;
   text-align: center;
@@ -70,10 +70,9 @@
   box-shadow: 3px 3px 8px -3px white;
 }
 
-*,
-::after,
-::before {
-  box-sizing: content-box;
+.tripCardDate {
+  font-size: 3vw;
+  padding: 0 5%;
 }
 
 .backLink {
@@ -85,7 +84,7 @@
 
   .tripCardEventDetails {
     width: 40vw;
-    margin: 0 0 0 4%;
+    margin: 0 0 10% 4%;
   }
 }
 
@@ -93,10 +92,20 @@
 @media only screen and (min-width: 992px) {
   .tripCardEventDetails {
     width: 25vw;
-    margin: 0 0 0 4%;
+    margin: 0 0 10% 4%;
   }
 
   .tripCardEventDetailsH4 {
     font-size: 1.5vw;
+  }
+
+  .tripCardDate {
+    font-size: 1vw;
+    padding: 0 5%;
+  }
+
+  .tripCardEventDetailsP {
+    font-size: 1.5vw;
+    padding: 0 5%;
   }
 }

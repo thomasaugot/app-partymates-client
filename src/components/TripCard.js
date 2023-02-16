@@ -17,7 +17,7 @@ function TripCard(props) {
         <h4 className="tripCardEventDetailsH4">By {props.creatorName}</h4>
         <h4 className="tripCardEventDetailsH4">Message:</h4>
         <p className="tripCardEventDetailsP">{props.tripMessage}</p>
-        <p>
+        <p className="tripCardDate">
           Posted on {dayjs(props.creationDate).format("MMM D, YYYY h:mm A")}
         </p>
         {props.creatorId === user?._id && (

@@ -29,15 +29,15 @@ function ReplyForm(props) {
   };
 
   return (
-    <div>
-      <form className="sendMessage" onSubmit={handleSubmit}>
+    <div className="replyCard">
+      <form className="sendMessageCard" onSubmit={handleSubmit}>
         <label className="msgTitle">Write a message</label>
-        <div className="borderForm">
+        <div className="borderFormProfile">
           <textarea
             type="text"
             rows="2"
             cols="26"
-            class="textarea"
+            class="textareaCard"
             name="description"
             placeholder="Write your message here"
             value={content}
