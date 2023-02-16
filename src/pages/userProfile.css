@@ -61,7 +61,7 @@
 }
 
 .borderFormProfile {
-  width: 90%;
+  width: 100%;
 }
 
 .eventCardProfileImg {
@@ -93,13 +93,51 @@ box-shadow: 5px 5px 10px -5px white;
   color: white;
 }
 
+.inboxCardP {
+  border: solid rgb(0, 191, 255) 1px;
+  padding: 4%;
+  margin: 6% 0;
+  border-radius: 5px;
+  font-size: 3vw;
+  width: 100%;
+}
+
 .sendMessageCard {
-padding-left: 13%;
+width: 100%;
+display: flex;
+flex-direction: column;
+justify-content: center;
+}
+
+.textareaCard {
+  width: 100%;
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
   .accordion {
     margin: 5% 0 80% 0;
+  }
+
+  .cardsProfileH4 {
+    font-size: 2vw;
+  }
+
+  .cardsProfileP {
+    font-size: 1.5vw;
+    width: 100%;
+    margin: 10% 0;
+  }
+
+  .cardsProfileH6 {
+    font-size: 1.5vw;
+  }
+
+  .inboxCardP {
+    font-size: smaller;
+  }
+
+  .inboxCardH4 {
+    font-size: 2vw;
   }
 }
