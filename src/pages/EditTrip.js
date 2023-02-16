@@ -32,7 +32,7 @@ function EditTrip() {
         requestBody
       )
       .then((response) => {
-        navigate(-1);
+        navigate(-2);
       });
   };
 
