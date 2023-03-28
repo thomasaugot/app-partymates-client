@@ -3,11 +3,10 @@ import axios from "axios";
 import EventCard from "../components/EventCard";
 import "./AllEvents.css";
 import SearchBar from "../components/SearchBar";
-// import AddEvent from "./AddEvent";
-// import { Link } from "react-router-dom";
 
 function AllEvents() {
   const [events, setEvents] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
 
   const getAllEvents = () => {
     axios
@@ -20,17 +19,17 @@ function AllEvents() {
     getAllEvents();
   }, []);
 
+  const filteredEvents = events.filter((eventObj) => {
+    return eventObj?.name?.toLowerCase().includes(searchTerm.toLowerCase());
+  });
+
   return (
     <div>
-      <div>
-        {/* <SearchBar events={events}/> */}
+      <div className="search__bar__section">
+        <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
       </div>
-      {/* <div className="addEventLink">
-        <h5 className="addEventLink">Can't find an event you are looking for?</h5>
-        <Link className="addEventLinkBtn" to="/events/create">Add it here</Link>
-      </div> */}
       <div className="AllEvents">
-        {events.map((eventObj) => (
+        {filteredEvents.map((eventObj) => (
           <EventCard key={eventObj._id} {...eventObj} />
         ))}
       </div>
