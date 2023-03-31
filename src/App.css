@@ -1,7 +1,7 @@
 @import url("http://fonts.googleapis.com/css?family=Open+Sans");
 
 .App {
-  background-color: #25262d;
+  background-color: #17252a;
   color: white;
   font-family: "Open Sans", sans-serif;
   letter-spacing: 0.6px;
@@ -37,4 +37,8 @@ a {
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
+  .logo {
+    width: 30vw;
+    margin: 0;
+  }
 }
